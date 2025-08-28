@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Logo / Favicon -->
-  <link rel="icon" href="terraty_logo_web.png?v=12" type="image/png" />
-  <link rel="preload" as="image" href="terraty_logo_web.png?v=12">
+  <link rel="icon" href="terraty_logo_web.png?v=13" type="image/png" />
+  <link rel="preload" as="image" href="terraty_logo_web.png?v=13">
 
   <style>
     :root{
@@ -40,7 +40,7 @@
     /* Header */
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
-    .brand img{height:200px;width:auto;object-fit:contain} /* LOGO MUY GRANDE */
+    .brand img{height:240px;width:auto;object-fit:contain} /* LOGO 240px */
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease;color:var(--brand-secondary);font-weight:600}
     nav a:hover{background:rgba(0,0,0,.06)}
@@ -60,5 +60,86 @@
     .ghost{border:1px solid rgba(0,0,0,.2);padding:12px 18px;border-radius:999px;font-weight:700;color:var(--brand-secondary)}
 
     /* Secciones */
+    section{padding:60px 0;border-top:1px solid rgba(0,0,0,.06)}
+    .section-title{font-size:clamp(22px,3vw,36px);font-weight:800;margin:0 0 22px;color:var(--brand-secondary)}
+
+    /* Propiedades */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .listing{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+    .listing .img{aspect-ratio:16/10;background:linear-gradient(135deg, rgba(200,154,60,.25), rgba(0,0,0,.1))}
+    .listing .body{padding:16px}
+    .tag{display:inline-block;font-size:10px;background:rgba(200,154,60,.12);color:#926f2b;border:1px solid rgba(200,154,60,.3);padding:6px 10px;border-radius:999px;margin-bottom:8px}
+    .price{font-weight:900}
+
+    /* Footer */
+    footer{padding:28px 0;background:#fafafa;color:var(--brand-secondary);border-top:1px solid rgba(0,0,0,.06)}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .foot small{color:var(--muted)}
+
+    /* WhatsApp flotante */
+    .wa{position:fixed;right:18px;bottom:18px;background:var(--brand-primary);border-radius:999px;padding:14px 18px;color:#fff;box-shadow:var(--shadow);font-weight:800}
+    .wa:hover{opacity:.9}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><img src="terraty_logo_web.png?v=13" alt="Terraty Inmobiliaria"></div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">INICIO</a></li>
+          <li><a href="#servicios">SERVICIOS</a></li>
+          <li><a href="#propiedades">PROPIEDADES</a></li>
+          <li><a href="#proceso">PROCESO</a></li>
+          <li><a href="#nosotros">NOSOTROS</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+      <a class="cta-btn" href="#contacto">AGENDAR</a>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero container">
+    <div class="grid">
+      <div>
+        <span class="badge">ESPECIALISTAS EN INFONAVIT • TRASPASOS</span>
+        <h1>VENDE O TRASPASA TU VIVIENDA INFONAVIT EN GUADALAJARA</h1>
+        <p>GESTIONAMOS TODO EL PROCESO NOTARIAL, LEGAL Y ADMINISTRATIVO PARA QUE CIERRES SIN ESTRÉS.</p>
+        <div class="actions">
+          <a class="cta-btn" href="#contacto">QUIERO UNA VALUACIÓN</a>
+          <a class="ghost" href="#servicios">VER SERVICIOS</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="servicios" class="container">
+    <h2 class="section-title">SERVICIOS PRINCIPALES</h2>
+    <p>COMPRA/VENTA DE VIVIENDAS INFONAVIT • TRASPASOS • RECUPERACIÓN</p>
+  </section>
+
+  <section id="propiedades" class="container">
+    <h2 class="section-title">PROPIEDADES DESTACADAS</h2>
+    <div class="listings">
+      <article class="listing"><div class="img"></div><div class="body"><span class="tag">GUADALAJARA</span><h3>CASA 2 REC</h3><div class="price">$ 850,000</div></div></article>
+      <article class="listing"><div class="img"></div><div class="body"><span class="tag">TLAJOMULCO</span><h3>CASA 3 REC</h3><div class="price">$ 1,150,000</div></div></article>
+      <article class="listing"><div class="img"></div><div class="body"><span class="tag">ZAPOPAN</span><h3>DEPTO 2 REC</h3><div class="price">$ 980,000</div></div></article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div style="font-weight:900;margin-bottom:6px">TERRATY INMOBILIARIA</div>
+        <small>© 2025 TERRATY. TODOS LOS DERECHOS RESERVADOS.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank">WHATSAPP</a>
+</body>
+</html>
+
 
 
