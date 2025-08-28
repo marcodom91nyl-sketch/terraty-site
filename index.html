@@ -1,81 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terraty Inmobiliaria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TERRATY INMOBILIARIA</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #fff;
       color: #333;
+      text-transform: uppercase; /* 🔥 Todo en mayúsculas */
     }
 
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: white;
+      width: 100%;
+      background: #fff;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      justify-content: space-between;
+      padding: 10px 30px;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
     }
-
     header img {
-      height: 80px; /* tamaño del logo */
-      margin-right: 15px;
-    }
-
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-      color: #000;
-    }
-
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
       height: 60px;
+    }
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hero {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
       text-decoration: none;
-      font-size: 28px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
+    .servicios {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .servicios h2 {
+      margin-bottom: 30px;
+    }
+    .servicios .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .servicio {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <img src="terraty_logo_web.png" alt="Terraty Inmobiliaria">
-    <h1>Terraty Inmobiliaria</h1>
+    <img src="terraty_logo_web.png" alt="LOGO TERRATY INMOBILIARIA">
+    <nav>
+      <a href="#servicios">SERVICIOS</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
   </header>
 
-  <main>
-    <h2>Encuentra soluciones para tu vivienda</h2>
-    <p>Compra, traspasos o venta con asesoría profesional y certeza legal.</p>
-  </main>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>ENCUENTRA SOLUCIONES PARA TU VIVIENDA</h1>
+    <a class="btn-whatsapp" href="https://wa.me/523328289896?text=HOLA%20TERRATY,%20QUIERO%20MÁS%20INFORMACIÓN" target="_blank">
+      ESCRÍBENOS POR WHATSAPP
+    </a>
+  </section>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/523328289896" class="whatsapp-btn" target="_blank" title="Hablar con un asesor por WhatsApp">
-    💬
-  </a>
+  <!-- Servicios -->
+  <section id="servicios" class="servicios">
+    <h2>NUESTROS SERVICIOS</h2>
+    <div class="grid">
+      <div class="servicio">
+        <h3>COMPRA DE VIVIENDAS</h3>
+        <p>ASESORÍA COMPLETA EN EL PROCESO DE COMPRA DE TU NUEVA CASA.</p>
+      </div>
+      <div class="servicio">
+        <h3>VENTA DE VIVIENDAS</h3>
+        <p>TE AYUDAMOS A VENDER TU PROPIEDAD CON ESTRATEGIAS EFECTIVAS.</p>
+      </div>
+      <div class="servicio">
+        <h3>GESTIÓN INFONAVIT</h3>
+        <p>APOYO ESPECIALIZADO EN TRÁMITES Y RECUPERACIÓN DE CASAS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <p>&copy; 2025 TERRATY INMOBILIARIA</p>
+    <div class="redes">
+      <a href="https://facebook.com/terraty.inmobiliaria" target="_blank">FACEBOOK</a>
+      <a href="https://instagram.com/terraty_inmobiliaria" target="_blank">INSTAGRAM</a>
+      <a href="https://tiktok.com/@terraty.inmobiliaria" target="_blank">TIKTOK</a>
+    </div>
+  </footer>
 </body>
 </html>
