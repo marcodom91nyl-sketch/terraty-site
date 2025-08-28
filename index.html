@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Logo / Favicon (archivo en la RAÍZ del sitio) -->
-  <link rel="icon" href="terraty_logo_web.png?v=10" type="image/png" />
-  <link rel="preload" as="image" href="terraty_logo_web.png?v=10">
+  <link rel="icon" href="terraty_logo_web.png?v=11" type="image/png" />
+  <link rel="preload" as="image" href="terraty_logo_web.png?v=11">
 
   <style>
     :root{
@@ -42,7 +42,7 @@
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
     .brand{display:flex;align-items:center}
-    .brand img{height:140px;width:auto;object-fit:contain} /* LOGO PROTAGONISTA */
+    .brand img{height:160px;width:auto;object-fit:contain} /* LOGO MÁS GRANDE */
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease;color:var(--brand-secondary)}
     nav a:hover{background:rgba(0,0,0,.06)}
@@ -76,7 +76,6 @@
     .cards .c p{margin:0;color:var(--muted);font-size:12px;min-height:44px}
     .cards .c .mini{display:flex;gap:8px;flex-wrap:wrap}
     .mini span{font-size:10px;border:1px solid rgba(0,0,0,.14);padding:6px 10px;border-radius:999px;color:var(--brand-secondary)}
-    .mini span.active{background:rgba(0,0,0,.08)}
 
     /* Proceso */
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -119,18 +118,6 @@
     /* WhatsApp flotante */
     .wa{position:fixed;right:18px;bottom:18px;background:var(--brand-primary);border-radius:999px;padding:14px 18px;color:#fff;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;font-weight:800}
     .wa:hover{opacity:.9}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr 1fr}
-      .listings{grid-template-columns:1fr}
-      .quotes{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-      .foot{grid-template-columns:1fr}
-      nav ul{display:none}
-    }
   </style>
 </head>
 <body>
@@ -138,7 +125,7 @@
   <header>
     <div class="container nav" id="navbar">
       <div class="brand">
-        <img src="terraty_logo_web.png?v=10" alt="Terraty Inmobiliaria" />
+        <img src="terraty_logo_web.png?v=11" alt="Terraty Inmobiliaria" />
       </div>
       <nav>
         <ul>
@@ -204,54 +191,27 @@
         <div class="c">
           <h3>COMPRA/VENTA DE VIVIENDAS INFONAVIT</h3>
           <p>CERRAMOS OPERACIONES CON SEGURIDAD JURÍDICA Y ACOMPAÑAMIENTO NOTARIAL. ASESORÍA DESDE EL INICIO HASTA LA ENTREGA.</p>
-          <div class="mini"><span>ANÁLISIS LEGAL</span><span>PRECIO JUSTO</span><span>CIERRE ÁGIL</span></div>
         </div>
         <div class="c">
           <h3>TRASPASOS Y CESIONES DE DERECHOS</h3>
           <p>GESTIONAMOS TRASPASOS FORMALES PARA EVITAR RIESGOS. DOCUMENTACIÓN EN REGLA Y PROTECCIÓN PARA AMBAS PARTES.</p>
-          <div class="mini"><span>CONTRATOS</span><span>NOTARÍA</span><span>GARANTÍAS</span></div>
         </div>
         <div class="c">
           <h3>RECUPERACIÓN DE CASAS ABANDONADAS</h3>
           <p>DIAGNÓSTICO LEGAL Y ESTRATÉGICO PARA CASOS CON VANDALISMO O ADEUDOS. TE DAMOS OPCIONES REALES PARA RESOLVER.</p>
-          <div class="mini"><span>VALORACIÓN</span><span>RUTA LEGAL</span><span>CIERRE SEGURO</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROPIEDADES (estático para evitar errores de JS) -->
+  <!-- PROPIEDADES -->
   <section id="propiedades">
     <div class="container">
       <h2 class="section-title">PROPIEDADES DESTACADAS</h2>
       <div class="listings">
-        <article class="listing">
-          <div class="img"></div>
-          <div class="body">
-            <span class="tag">GUADALAJARA • INFONAVIT</span>
-            <h3 style="margin:0 0 6px;font-size:18px">CASA 2 REC • 1 BAÑO • 1 ESTAC</h3>
-            <div class="price">$ 850,000 MXN</div>
-            <small style="color:var(--muted)">DISPONIBLE</small>
-          </div>
-        </article>
-        <article class="listing">
-          <div class="img"></div>
-          <div class="body">
-            <span class="tag">TLAJOMULCO • INFONAVIT</span>
-            <h3 style="margin:0 0 6px;font-size:18px">CASA 3 REC • 1.5 BAÑOS • PATIO</h3>
-            <div class="price">$ 1,150,000 MXN</div>
-            <small style="color:var(--muted)">EN PROCESO</small>
-          </div>
-        </article>
-        <article class="listing">
-          <div class="img"></div>
-          <div class="body">
-            <span class="tag">ZAPOPAN</span>
-            <h3 style="margin:0 0 6px;font-size:18px">DEPTO 2 REC • 1 BAÑO • NIVEL 2</h3>
-            <div class="price">$ 980,000 MXN</div>
-            <small style="color:var(--muted)">DISPONIBLE</small>
-          </div>
-        </article>
+        <article class="listing"><div class="img"></div><div class="body"><span class="tag">GUADALAJARA • INFONAVIT</span><h3>CASA 2 REC • 1 BAÑO</h3><div class="price">$ 850,000 MXN</div></div></article>
+        <article class="listing"><div class="img"></div><div class="body"><span class="tag">TLAJOMULCO • INFONAVIT</span><h3>CASA 3 REC • 1.5 BAÑOS</h3><div class="price">$ 1,150,000 MXN</div></div></article>
+        <article class="listing"><div class="img"></div><div class="body"><span class="tag">ZAPOPAN</span><h3>DEPTO 2 REC • 1 BAÑO</h3><div class="price">$ 980,000 MXN</div></div></article>
       </div>
     </div>
   </section>
@@ -261,10 +221,10 @@
     <div class="container">
       <h2 class="section-title">CÓMO TRABAJAMOS</h2>
       <div class="steps">
-        <div class="step"><h4>1) DIAGNÓSTICO</h4><p>REVISAMOS ESTATUS INFONAVIT, PAPELES Y RIESGOS.</p></div>
-        <div class="step"><h4>2) ESTRATEGIA</h4><p>DEFINIMOS SI CONVIENE VENDER O TRASPASAR.</p></div>
-        <div class="step"><h4>3) DOCUMENTACIÓN</h4><p>PREPARAMOS CONTRATOS, NOTARÍA Y GESTORÍAS.</p></div>
-        <div class="step"><h4>4) CIERRE</h4><p>ACOMPAÑAMIENTO HASTA ENTREGA Y PAGO.</p></div>
+        <div class="step"><h4>1) DIAGNÓSTICO</h4><p>REVISAMOS ESTATUS INFONAVIT.</p></div>
+        <div class="step"><h4>2) ESTRATEGIA</h4><p>DEFINIMOS VENTA O TRASPASO.</p></div>
+        <div class="step"><h4>3) DOCUMENTACIÓN</h4><p>CONTRATOS Y NOTARÍA.</p></div>
+        <div class="step"><h4>4) CIERRE</h4><p>ENTREGA Y PAGO SEGURO.</p></div>
       </div>
     </div>
   </section>
@@ -274,9 +234,9 @@
     <div class="container">
       <h2 class="section-title">QUÉ DICEN NUESTROS CLIENTES</h2>
       <div class="quotes">
-        <div class="quote">“TRASPASAMOS NUESTRA CASA SIN PROBLEMAS Y CON TODO EN REGLA.”<small>ANA • GUADALAJARA</small></div>
-        <div class="quote">“ME ACOMPAÑARON EN TODO EL TRÁMITE INFONAVIT. TRANQUILIDAD TOTAL.”<small>CARLOS • ZAPOPAN</small></div>
-        <div class="quote">“TENÍAMOS UNA PROPIEDAD VANDALIZADA Y LOGRAMOS VENDERLA BIEN.”<small>MARÍA • TLAJOMULCO</small></div>
+        <div class="quote">“TRASPASAMOS NUESTRA CASA SIN PROBLEMAS.”<small>ANA • GUADALAJARA</small></div>
+        <div class="quote">“ME ACOMPAÑARON EN TODO EL TRÁMITE.”<small>CARLOS • ZAPOPAN</small></div>
+        <div class="quote">“TENÍAMOS UNA PROPIEDAD VANDALIZADA Y LOGRAMOS VENDERLA.”<small>MARÍA • TLAJOMULCO</small></div>
       </div>
     </div>
   </section>
@@ -285,80 +245,7 @@
   <section id="faq">
     <div class="container">
       <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
-      <div class="cards">
-        <details open>
-          <summary>¿PUEDO TRASPASAR UNA CASA INFONAVIT QUE NO ESTOY USANDO?</summary>
-          <p>SÍ. EXISTEN MECANISMOS LEGALES PARA CEDER DERECHOS O FORMALIZAR UN TRASPASO. TE ASESORAMOS PARA HACERLO DE MANERA SEGURA.</p>
-        </details>
-        <details>
-          <summary>¿CUÁNTO TARDA UN PROCESO DE VENTA O TRASPASO?</summary>
-          <p>DEPENDE DEL EXPEDIENTE Y LA NOTARÍA. TRABAJAMOS CON RUTAS ÁGILES Y FECHAS CLARAS PARA ACELERAR EL CIERRE.</p>
-        </details>
-        <details>
-          <summary>¿QUÉ PASA SI LA VIVIENDA ESTÁ VANDALIZADA?</summary>
-          <p>PRIMERO DIAGNOSTICAMOS EL ESTADO Y EL RIESGO. LUEGO DEFINIMOS SI CONVIENE VENDER O TRASPASAR. TE DAMOS NÚMEROS REALES.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="container">
-      <h2 class="section-title">CONTACTO</h2>
-      <div class="contact">
-        <form class="form">
-          <div class="row">
-            <div>
-              <label>NOMBRE</label>
-              <input required type="text" placeholder="TU NOMBRE" />
-            </div>
-            <div>
-              <label>TELÉFONO</label>
-              <input required type="tel" placeholder="10 DÍGITOS" />
-            </div>
-          </div>
-          <label>EMAIL</label>
-          <input required type="email" placeholder="TU CORREO" />
-          <label>MENSAJE</label>
-          <textarea placeholder="CUÉNTANOS TU CASO: INFONAVIT, UBICACIÓN, ESTATUS"></textarea>
-          <a class="cta-btn" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">ENVIAR</a>
-        </form>
-        <div class="card" style="padding:20px">
-          <h3 style="margin-top:0;font-weight:800;color:var(--brand-secondary)">DATOS DE CONTACTO</h3>
-          <p style="color:var(--muted);font-size:12px">GUADALAJARA, JALISCO • ATENCIÓN DE LUNES A SÁBADO</p>
-          <p>EMAIL: HOLA@TERRATY.MX</p>
-          <p>TEL: 33 0000 0000</p>
-          <p>WHATSAPP: +52 33 0000 0000</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container foot">
-      <div>
-        <div style="font-weight:900;margin-bottom:6px">TERRATY INMOBILIARIA</div>
-        <small>© 2025 TERRATY. TODOS LOS DERECHOS RESERVADOS.</small>
-      </div>
-      <div>
-        <div style="font-weight:800;margin-bottom:8px">LEGAL</div>
-        <small><a href="#">AVISO DE PRIVACIDAD</a></small><br/>
-        <small><a href="#">TÉRMINOS Y CONDICIONES</a></small>
-      </div>
-      <div>
-        <div style="font-weight:800;margin-bottom:8px">SUSCRIPCIÓN</div>
-        <div class="sub">
-          <input placeholder="TU EMAIL" type="email" />
-          <a class="cta-btn" href="#">ENVIAR</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Botón WhatsApp -->
-  <a class="wa" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">WHATSAPP</a>
-</body>
-</html>
+      <details><summary>¿PUEDO TRASPASAR UNA CASA INFONAVIT?</summary><p>SÍ, EXISTEN MECANISMOS LEGALES PARA HACERLO DE MANERA SEGURA.</p></details>
+      <details><summary>¿CUÁNTO TARDA EL PROCESO?</summary><p>DEPENDE DEL EXPEDIENTE Y LA NOTARÍA, PERO ACELERAMOS EL CIERRE.</p></details>
+      <details><summary>¿QUÉ PASA SI ESTÁ VANDALIZADA?</summary><p>DIAGNOSTIC
 
