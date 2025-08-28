@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Logo / Favicon -->
-  <link rel="icon" href="terraty_logo_web.png?v=7" type="image/png" />
-  <link rel="preload" as="image" href="terraty_logo_web.png?v=7">
+  <link rel="icon" href="terraty_logo_web.png?v=8" type="image/png" />
+  <link rel="preload" as="image" href="terraty_logo_web.png?v=8">
 
   <style>
     :root{
@@ -40,15 +40,68 @@
     /* Header */
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0}
-    .brand img{height:100px;width:auto;object-fit:contain}
+    .brand img{height:120px;width:auto;object-fit:contain} /* LOGO GRANDE */
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease;color:var(--brand-secondary)}
     nav a:hover{background:rgba(0,0,0,.06)}
-    .cta-btn{display:inline-block;background:var(--brand-primary);color:white;padding:12px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);letter-spacing:.6px}
+
+    /* Botón CTA reducido */
+    .cta-btn{
+      display:inline-block;
+      background:var(--brand-primary);
+      color:white;
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:0.85rem;
+      box-shadow:none;
+      letter-spacing:.5px;
+    }
     .cta-btn:hover{opacity:.9}
     .ghost{border:1px solid rgba(0,0,0,.2);padding:12px 18px;border-radius:999px;font-weight:700;color:var(--brand-secondary)}
 
     /* Hero */
     .hero{position:relative;padding:70px 0 40px;overflow:hidden}
-    .grid{display:grid;grid-template-colu
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(200,154,60,.1);color:var(--brand-primary);border:1px solid rgba(200,154,60,.3);padding:8px 12px;border-radius:999px;font-size:.82rem;margin-bottom:16px;font-weight:600}
+    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:6px 0 12px;font-weight:900;color:var(--brand-secondary)}
+    .hero p{color:var(--muted);margin:0 0 18px;max-width:58ch}
+    .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:20px}
+
+    /* Secciones */
+    section{padding:60px 0;border-top:1px solid rgba(0,0,0,.06)}
+    .section-title{font-size:clamp(22px,3vw,36px);margin:0 0 22px;font-weight:800;color:var(--brand-secondary)}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cards .c{background:var(--card);padding:20px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);display:flex;flex-direction:column;gap:12px}
+    .cards .c h3{margin:0;font-size:18px;font-weight:800;color:var(--brand-secondary)}
+    .cards .c p{margin:0;color:var(--muted);font-size:12px;min-height:44px}
+    .cards .c .mini{display:flex;gap:8px;flex-wrap:wrap}
+    .mini span{font-size:10px;border:1px solid rgba(0,0,0,.14);padding:6px 10px;border-radius:999px;color:var(--brand-secondary)}
+
+    /* Proceso */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{background:var(--card);padding:18px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.06)}
+    .step h4{margin:0 0 6px;font-size:14px}
+    .step p{margin:0;color:var(--muted);font-size:12px}
+
+    /* Propiedades */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .listing{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+    .listing .img{aspect-ratio:16/10;background:linear-gradient(135deg, rgba(200,154,60,.25), rgba(0,0,0,.10));}
+    .listing .body{padding:16px}
+    .tag{display:inline-block;font-size:10px;background:rgba(200,154,60,.12);color:#926f2b;border:1px solid rgba(200,154,60,.3);padding:6px 10px;border-radius:999px;margin-bottom:8px}
+    .price{font-weight:900}
+
+    /* Testimonios */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .quote{background:var(--card);padding:18px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);color:#333}
+    .quote small{display:block;color:var(--muted);margin-top:8px}
+
+    /* FAQ */
+    details{background:var(--card);padding:14px 18px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.06)}
+    summary{cursor:pointer;font-weight:800;color:var(--brand-seco
+
 
