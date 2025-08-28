@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terraty Inmobiliaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=DM+Sans:wght@600;700&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-accent: #cda05a;
+      --color-accent-contrast: #fff;
+      --color-bg: #f9fafb;
+      --color-text: #2f2b25;
+      --color-muted: #666;
+      --whatsapp-green: #25D366;
+    }
+
+    body{font-family:"Inter",sans-serif;margin:0;padding:0;background:var(--color-bg);color:var(--color-text)}
+    header{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,0.08);position:sticky;top:0;z-index:50;padding:12px 24px;display:flex;justify-content:center;align-items:center}
+    .brand{display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .brand-logo{height:88px;width:auto;display:block}
+    .brand-name{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.9rem;color:var(--color-accent);margin-top:6px;text-align:center}
+    .section-title{text-align:center;font-family:"DM Sans",sans-serif;font-size:2rem;color:var(--color-accent);margin:40px 0 20px}
+
+    /* HERO */
+    .hero{display:flex;align-items:center;justify-content:center;min-height:56vh;background:var(--color-bg);padding:40px 20px}
+    .hero-inner{text-align:center}
+    .hero-title{font-family:"DM Sans",sans-serif;font-size:2.2rem;color:var(--color-text);margin:8px 0 16px}
+    .hero-sub{color:var(--color-muted);margin:0 0 20px}
+    .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{cursor:pointer;display:inline-block;text-align:center;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .btn-accent{background:var(--color-accent);color:var(--color-accent-contrast)}
+    .btn-outline{border:2px solid var(--color-accent);color:var(--color-accent)}
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="Terraty Inmobiliaria" class="brand-logo">
+      <div class="brand-name">Terraty Inmobiliaria</div>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Encuentra soluciones para tu vivienda</h1>
+      <p class="hero-sub">Compra, traspasa o vende con asesoría profesional y certeza legal</p>
+      <div class="hero-cta">
+        <a class="btn btn-outline" href="#comprar">Comprar</a>
+        <a class="btn btn-outline" href="#traspasar">Traspasar</a>
+        <a class="btn btn-accent" href="#vender">Vender</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/523328289896" class="whatsapp-float" target="_blank" aria-label="Hablar con un asesor por WhatsApp">💬</a>
+
+  <footer style="background:#fff;border-top:1px solid #e5e7eb;margin-top:40px;padding:20px;text-align:center;font-size:0.85rem;color:var(--color-muted)">
+    <p>© 2025 Terraty Inmobiliaria. Todos los derechos reservados.</p>
+    <p><a href="/aviso-privacidad.pdf" target="_blank" style="color:var(--color-accent);text-decoration:none">Aviso de Privacidad</a></p>
+  </footer>
+</body>
+</html>
