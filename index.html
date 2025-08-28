@@ -11,17 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Logo / Favicon (archivo en la RAÍZ del sitio) -->
-  <link rel="icon" href="terraty_logo_web.png?v=9" type="image/png" />
-  <link rel="preload" as="image" href="terraty_logo_web.png?v=9">
+  <link rel="icon" href="terraty_logo_web.png?v=10" type="image/png" />
+  <link rel="preload" as="image" href="terraty_logo_web.png?v=10">
 
   <style>
     :root{
-      /* Paleta basada en tu logo */
+      /* Paleta inspirada en tu logo */
       --brand-primary:#c89a3c;   /* dorado */
       --brand-secondary:#1a1a1a; /* negro */
       --brand-accent:#ffffff;    /* blanco */
 
-      /* Sistema UI */
       --bg:#ffffff;
       --card:#f9f9f9;
       --text:#1a1a1a;
@@ -41,19 +40,21 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
     .brand{display:flex;align-items:center}
-    .brand img{height:120px;width:auto;object-fit:contain} /* LOGO PROTAGONISTA */
+    .brand img{height:140px;width:auto;object-fit:contain} /* LOGO PROTAGONISTA */
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease;color:var(--brand-secondary)}
     nav a:hover{background:rgba(0,0,0,.06)}
-    /* Botón CTA más discreto */
+
+    /* Botón CTA discreto */
     .cta-btn{
       display:inline-block;background:var(--brand-primary);color:white;
       padding:10px 16px;border-radius:8px;font-weight:600;font-size:0.9rem;
       box-shadow:none;letter-spacing:.4px
     }
     .cta-btn:hover{opacity:.9}
+    .ghost{border:1px solid rgba(0,0,0,.2);padding:12px 18px;border-radius:999px;font-weight:700;color:var(--brand-secondary)}
 
     /* Hero */
     .hero{position:relative;padding:70px 0 40px;overflow:hidden}
@@ -137,7 +138,7 @@
   <header>
     <div class="container nav" id="navbar">
       <div class="brand">
-        <img src="terraty_logo_web.png?v=9" alt="Terraty Inmobiliaria" />
+        <img src="terraty_logo_web.png?v=10" alt="Terraty Inmobiliaria" />
       </div>
       <nav>
         <ul>
@@ -170,26 +171,26 @@
 
       <div class="hero-card card">
         <h3 style="margin:0 0 8px;font-weight:800">SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h3>
-        <form class="form" onsubmit="return handleLead(event)">
+        <form class="form" action="#contacto" onsubmit="return false">
           <div class="row">
             <div>
               <label>NOMBRE</label>
-              <input required type="text" id="nombre" placeholder="NOMBRE COMPLETO" />
+              <input required type="text" placeholder="NOMBRE COMPLETO" />
             </div>
             <div>
               <label>TELÉFONO</label>
-              <input required type="tel" id="telefono" placeholder="10 DÍGITOS" />
+              <input required type="tel" placeholder="10 DÍGITOS" />
             </div>
           </div>
           <label>EMAIL</label>
-          <input required type="email" id="email" placeholder="TU CORREO" />
+          <input required type="email" placeholder="TU CORREO" />
           <label>TIPO DE GESTIÓN</label>
           <div class="mini" style="margin:6px 0 10px">
             <span>VENTA</span><span>TRASPASO</span><span>RECUPERACIÓN</span>
           </div>
           <label>MENSAJE</label>
-          <textarea id="mensaje" placeholder="CUÉNTANOS EL CASO: INFONAVIT, ESTATUS, UBICACIÓN"></textarea>
-          <button class="cta-btn" type="submit">ENVIAR Y HABLAR POR WHATSAPP</button>
+          <textarea placeholder="CUÉNTANOS EL CASO: INFONAVIT, ESTATUS, UBICACIÓN"></textarea>
+          <a class="cta-btn" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">ENVIAR Y HABLAR POR WHATSAPP</a>
         </form>
       </div>
     </div>
@@ -210,34 +211,48 @@
           <p>GESTIONAMOS TRASPASOS FORMALES PARA EVITAR RIESGOS. DOCUMENTACIÓN EN REGLA Y PROTECCIÓN PARA AMBAS PARTES.</p>
           <div class="mini"><span>CONTRATOS</span><span>NOTARÍA</span><span>GARANTÍAS</span></div>
         </div>
+        <div class="c">
+          <h3>RECUPERACIÓN DE CASAS ABANDONADAS</h3>
+          <p>DIAGNÓSTICO LEGAL Y ESTRATÉGICO PARA CASOS CON VANDALISMO O ADEUDOS. TE DAMOS OPCIONES REALES PARA RESOLVER.</p>
+          <div class="mini"><span>VALORACIÓN</span><span>RUTA LEGAL</span><span>CIERRE SEGURO</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROPIEDADES -->
+  <!-- PROPIEDADES (estático para evitar errores de JS) -->
   <section id="propiedades">
     <div class="container">
       <h2 class="section-title">PROPIEDADES DESTACADAS</h2>
-    </div>
-    <div class="container">
-      <div class="cards" style="margin-bottom:12px">
-        <div class="c">
-          <h3>BUSCAR</h3>
-          <div class="mini" style="gap:10px">
-            <input id="q" placeholder="COLONIA, MUNICIPIO, TIPO…" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.14);background:#fff;color:var(--text);outline:none" />
-            <div class="mini"><span data-filter="INFONAVIT">INFONAVIT</span><span data-filter="CASA">CASA</span><span data-filter="DEPTO">DEPTO</span><span data-filter="TLAJOMULCO">TLAJOMULCO</span><span data-filter="GUADALAJARA">GUADALAJARA</span><span data-filter="ZAPOPAN">ZAPOPAN</span></div>
+      <div class="listings">
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body">
+            <span class="tag">GUADALAJARA • INFONAVIT</span>
+            <h3 style="margin:0 0 6px;font-size:18px">CASA 2 REC • 1 BAÑO • 1 ESTAC</h3>
+            <div class="price">$ 850,000 MXN</div>
+            <small style="color:var(--muted)">DISPONIBLE</small>
           </div>
-        </div>
-        <div class="c">
-          <h3>RANGO DE PRECIO</h3>
-          <div class="mini"><span data-price="0-800000">≤ $800K</span><span data-price="800000-1200000">$800K–$1.2M</span><span data-price="1200000-999999999">≥ $1.2M</span></div>
-        </div>
-        <div class="c">
-          <h3>ESTATUS</h3>
-          <div class="mini"><span data-status="DISPONIBLE">DISPONIBLE</span><span data-status="EN PROCESO">EN PROCESO</span></div>
-        </div>
+        </article>
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body">
+            <span class="tag">TLAJOMULCO • INFONAVIT</span>
+            <h3 style="margin:0 0 6px;font-size:18px">CASA 3 REC • 1.5 BAÑOS • PATIO</h3>
+            <div class="price">$ 1,150,000 MXN</div>
+            <small style="color:var(--muted)">EN PROCESO</small>
+          </div>
+        </article>
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body">
+            <span class="tag">ZAPOPAN</span>
+            <h3 style="margin:0 0 6px;font-size:18px">DEPTO 2 REC • 1 BAÑO • NIVEL 2</h3>
+            <div class="price">$ 980,000 MXN</div>
+            <small style="color:var(--muted)">DISPONIBLE</small>
+          </div>
+        </article>
       </div>
-      <div class="listings" id="listings"></div>
     </div>
   </section>
 
@@ -292,22 +307,22 @@
     <div class="container">
       <h2 class="section-title">CONTACTO</h2>
       <div class="contact">
-        <form class="form" onsubmit="return handleLead(event)">
+        <form class="form">
           <div class="row">
             <div>
               <label>NOMBRE</label>
-              <input required type="text" name="name" placeholder="TU NOMBRE" />
+              <input required type="text" placeholder="TU NOMBRE" />
             </div>
             <div>
               <label>TELÉFONO</label>
-              <input required type="tel" name="phone" placeholder="10 DÍGITOS" />
+              <input required type="tel" placeholder="10 DÍGITOS" />
             </div>
           </div>
           <label>EMAIL</label>
-          <input required type="email" name="email" placeholder="TU CORREO" />
+          <input required type="email" placeholder="TU CORREO" />
           <label>MENSAJE</label>
-          <textarea name="message" placeholder="CUÉNTANOS TU CASO: INFONAVIT, UBICACIÓN, ESTATUS"></textarea>
-          <button class="cta-btn" type="submit">ENVIAR</button>
+          <textarea placeholder="CUÉNTANOS TU CASO: INFONAVIT, UBICACIÓN, ESTATUS"></textarea>
+          <a class="cta-btn" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">ENVIAR</a>
         </form>
         <div class="card" style="padding:20px">
           <h3 style="margin-top:0;font-weight:800;color:var(--brand-secondary)">DATOS DE CONTACTO</h3>
@@ -325,7 +340,7 @@
     <div class="container foot">
       <div>
         <div style="font-weight:900;margin-bottom:6px">TERRATY INMOBILIARIA</div>
-        <small>© <span id="year"></span> TERRATY. TODOS LOS DERECHOS RESERVADOS.</small>
+        <small>© 2025 TERRATY. TODOS LOS DERECHOS RESERVADOS.</small>
       </div>
       <div>
         <div style="font-weight:800;margin-bottom:8px">LEGAL</div>
@@ -343,85 +358,7 @@
   </footer>
 
   <!-- Botón WhatsApp -->
-  <a class="wa" href="https://wa.me/523300000000?text=HOLA%20TERRATY%2C%20QUIERO%20ASESOR%C3%8DA" target="_blank" rel="noopener">WHATSAPP</a>
-
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
-      });
-    });
-
-    // Envío a WhatsApp
-    function handleLead(ev){
-      ev.preventDefault();
-      const f = ev.target.closest('form');
-      const name  = (f.querySelector('[name="name"],#nombre')?.value || '').trim();
-      const phone = (f.querySelector('[name="phone"],#telefono')?.value || '').trim();
-      const email = (f.querySelector('[name="email"],#email')?.value || '').trim();
-      const msg   = (f.querySelector('[name="message"],#mensaje')?.value || '').trim();
-
-      const texto = encodeURIComponent('HOLA TERRATY, SOY ' + name + '. TEL ' + phone + '. EMAIL ' + email + '. MI MENSAJE: ' + msg);
-      const numero = '523300000000'; // reemplaza por tu línea real
-      const url = 'https://wa.me/' + numero + '?text=' + texto;
-      window.open(url, '_blank');
-      return false;
-    }
-
-    // Datos demo + render de propiedades
-    const PROPS = [
-      {id:1,tipo:'CASA',zona:'GUADALAJARA',etiqueta:'INFONAVIT',titulo:'CASA 2 REC • 1 BAÑO • 1 ESTAC',precio:850000,status:'DISPONIBLE'},
-      {id:2,tipo:'CASA',zona:'TLAJOMULCO',etiqueta:'INFONAVIT',titulo:'CASA 3 REC • 1.5 BAÑOS • PATIO',precio:1150000,status:'EN PROCESO'},
-      {id:3,tipo:'DEPTO',zona:'ZAPOPAN',etiqueta:'',titulo:'DEPTO 2 REC • 1 BAÑO • NIVEL 2',precio:980000,status:'DISPONIBLE'}
-    ];
-    function renderProps(list){
-      const cont = document.getElementById('listings');
-      if(!cont) return;
-      cont.innerHTML = list.map(p => (
-        '<article class="listing">'
-        + '<div class="img"></div>'
-        + '<div class="body">'
-        +   '<span class="tag">' + p.zona + (p.etiqueta? ' • ' + p.etiqueta : '') + '</span>'
-        +   '<h3 style="margin:0 0 6px;font-size:18px">' + p.titulo + '</h3>'
-        +   '<div class="price">$ ' + p.precio.toLocaleString('es-MX') + ' MXN</div>'
-        +   '<small style="color:var(--muted)">' + p.status + '</small>'
-        + '</div>'
-        + '</article>'
-      )).join('');
-    }
-    function applyFilters(){
-      const q = (document.getElementById('q')?.value || '').trim().toUpperCase();
-      const activeTags = Array.from(document.querySelectorAll('.mini span.active')).map(el=>el.dataset.filter).filter(Boolean);
-      const price = (document.querySelector('.mini span[data-price].active')?.dataset.price || '');
-      const status = (document.querySelector('.mini span[data-status].active')?.dataset.status || '');
-      let list = PROPS.filter(p => {
-        const text = (p.titulo + ' ' + p.zona + ' ' + p.tipo + ' ' + p.etiqueta).toUpperCase();
-        const matchQ = q? text.includes(q): true;
-        const matchTags = activeTags.length? activeTags.some(t => text.includes(t)) : true;
-        const matchPrice = price? ( ()=>{ const parts = price.split('-'); const a = Number(parts[0]); const b = Number(parts[1]); return p.precio>=a && p.precio<=b; })() : true;
-        const matchStatus = status? p.status===status : true;
-        return matchQ && matchTags && matchPrice && matchStatus;
-      });
-      renderProps(list);
-    }
-    document.addEventListener('click', (e)=>{
-      const span = e.target.closest('.mini span');
-      if(span){
-        if(span.dataset.price){
-          document.querySelectorAll('.mini span[data-price].active').forEach(s=>s.classList.remove('active'));
-        }
-        span.classList.toggle('active');
-        applyFilters();
-      }
-    });
-    document.getElementById('q')?.addEventListener('input', applyFilters);
-    renderProps(PROPS);
-  </script>
+  <a class="wa" href="https://wa.me/523300000000?text=Hola%20Terraty%2C%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">WHATSAPP</a>
 </body>
 </html>
 
