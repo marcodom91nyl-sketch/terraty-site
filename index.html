@@ -4,26 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TERRATY INMOBILIARIA | INFONAVIT • COMPRA • VENTA • TRASPASOS</title>
-  <meta name="description" content="Terraty Inmobiliaria en Guadalajara: compramos, vendemos y gestionamos traspasos de viviendas, especialmente INFONAVIT. Atención rápida, segura y transparente." />
+  <meta name="description" content="Terraty Inmobiliaria en Jalisco: compramos, vendemos y gestionamos traspasos de viviendas, especialmente INFONAVIT. Atención rápida, segura y transparente." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.png" type="image/png" />
-  <meta property="og:title" content="Terraty Inmobiliaria" />
-  <meta property="og:description" content="Compramos, vendemos y gestionamos traspasos de viviendas INFONAVIT en Guadalajara." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.jpg" />
-  <meta property="og:url" content="https://www.terraty.mx/" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- FAVICON INLINE (DATA URI SVG) -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" y1="0" x2="1" y2="1"%3E%3Cstop offset="0%25" stop-color="%2328c76f"/%3E%3Cstop offset="100%25" stop-color="%2300a884"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="64" height="64" rx="12" fill="%23151821"/%3E%3Cpath d="M8 30L32 12l24 18v20a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V30z" fill="url(%23g)"/%3E%3Cpath d="M24 48V34h16v14" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/%3E%3C/svg%3E' />
   <style>
     :root{
-      --bg:#0f1115;         /* fondo oscuro elegante */
+      /* === PALETA DE MARCA (EDITA SOLO ESTOS SI CAMBIAN) === */
+      --brand-primary:#28c76f;   /* VERDE PRINCIPAL */
+      --brand-secondary:#00a884; /* VERDE SECUNDARIO */
+      --brand-accent:#5a8cff;    /* AZUL ACCENTO */
+
+      /* === SISTEMA (NO CAMBIAR NOMBRES) === */
+      --bg:#0f1115;         /* fondo */
       --card:#151821;       /* tarjetas */
       --text:#e6e6e6;       /* texto principal */
       --muted:#b8bcc6;      /* texto secundario */
-      --brand:#28c76f;      /* acento (whatsapp/éxito) */
-      --brand-2:#00a884;    /* acento alterno */
-      --accent:#5a8cff;     /* botones/links */
-      --danger:#ff5a5f;     /* alertas */
+      --brand:var(--brand-primary);
+      --brand-2:var(--brand-secondary);
+      --accent:var(--brand-accent);
+      --danger:#ff5a5f;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:16px;
       --maxw:1200px;
@@ -32,20 +34,19 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
     body{line-height:1.4;text-transform:uppercase;}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img,svg{max-width:100%;display:block}
     .container{max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
 
     /* HEADER */
     header{position:sticky;top:0;z-index:1000;background:rgba(15,17,21,.8);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
-    .brand .title{font-weight:800;letter-spacing:.8px}
+    .brand .title{font-weight:900;letter-spacing:.8px}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease}
     nav a:hover{background:rgba(255,255,255,.06)}
 
-    .cta-btn{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:var(--shadow);letter-spacing:.6px}
+    .cta-btn{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);letter-spacing:.6px}
     .cta-btn:hover{transform:translateY(-1px);opacity:.95}
 
     .menu-toggle{display:none;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;background:transparent;color:var(--text);}
@@ -53,7 +54,7 @@
     /* HERO */
     .hero{position:relative;padding:70px 0 40px;overflow:hidden}
     .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(40,199,111,.14);color:#c6f7df;border:1px solid rgba(40,199,111,.3);padding:8px 12px;border-radius:999px;font-size:.82rem;margin-bottom:16px}
+    .badge{display:inline-flex;align-items:center;gap:10px;background:color-mix(in oklab, var(--brand) 20%, transparent);color:color-mix(in oklab, var(--brand) 85%, white);border:1px solid color-mix(in oklab, var(--brand) 45%, transparent);padding:8px 12px;border-radius:999px;font-size:.82rem;margin-bottom:16px}
     .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:6px 0 12px;font-weight:900}
     .hero p{color:var(--muted);margin:0 0 18px;max-width:58ch}
     .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -64,12 +65,7 @@
     /* SECTIONS */
     section{padding:60px 0;border-top:1px solid rgba(255,255,255,.06)}
     .section-title{font-size:clamp(22px,3vw,36px);margin:0 0 22px;font-weight:800}
-    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .kpi .item{background:var(--card);padding:18px;border-radius:var(--radius);text-align:center;border:1px solid rgba(255,255,255,.06)}
-    .kpi .n{font-size:22px;font-weight:900}
-    .kpi .l{color:var(--muted);font-weight:600;font-size:12px}
 
-    /* SERVICES */
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .cards .c{background:var(--card);padding:20px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:12px}
     .cards .c h3{margin:0;font-size:18px;font-weight:800}
@@ -124,7 +120,6 @@
     /* RESPONSIVE */
     @media (max-width: 980px){
       .grid{grid-template-columns:1fr}
-      .kpi{grid-template-columns:repeat(2,1fr)}
       .cards{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr 1fr}
       .listings{grid-template-columns:1fr}
@@ -142,8 +137,21 @@
   <header>
     <div class="container nav" id="navbar">
       <div class="brand">
-        <!-- Reemplaza src por tu logo real -->
-        <img src="/logo-terraty.png" alt="Terraty Inmobiliaria Logo" />
+        <!-- LOGO INLINE SVG (SIN ARCHIVOS EXTERNOS) -->
+        <svg width="42" height="42" viewBox="0 0 64 64" aria-label="Logo Terraty" role="img">
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--brand-primary)"/>
+              <stop offset="100%" stop-color="var(--brand-secondary)"/>
+            </linearGradient>
+            <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
+            </filter>
+          </defs>
+          <rect x="2" y="2" width="60" height="60" rx="14" fill="#151821"/>
+          <path d="M10 30L32 14l22 16v20a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V30z" fill="url(#grad)" filter="url(#s)"/>
+          <path d="M40 48V28H24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <div class="title">TERRATY INMOBILIARIA</div>
       </div>
       <nav>
@@ -167,18 +175,12 @@
   <main id="inicio" class="hero container">
     <div class="grid">
       <div>
-        <span class="badge">ESPECIALISTAS EN INFONAVIT • TRASPASOS • REGULARIZACIÓN</span>
-        <h1>VENDES, TRASPASAS O REGULARIZAS TU VIVIENDA INFONAVIT EN GUADALAJARA CON SEGURIDAD Y VELOCIDAD</h1>
+        <span class="badge">ESPECIALISTAS EN INFONAVIT • TRASPASOS</span>
+        <h1>VENDE O TRASPASA TU VIVIENDA INFONAVIT EN GUADALAJARA CON SEGURIDAD Y VELOCIDAD</h1>
         <p>GESTIONAMOS TODO EL PROCESO NOTARIAL, LEGAL Y ADMINISTRATIVO PARA QUE CIERRES SIN ESTRÉS. SI TU CASA ESTÁ ABANDONADA O VANDALIZADA, TE DAMOS OPCIONES REALES.</p>
         <div class="actions">
           <a class="cta-btn" href="#contacto">QUIERO UNA VALUACIÓN</a>
           <a class="ghost" href="#servicios">VER SERVICIOS</a>
-        </div>
-        <div class="kpi" style="margin-top:18px">
-          <div class="item"><div class="n">9+ AÑOS</div><div class="l">EXPERIENCIA</div></div>
-          <div class="item"><div class="n">72 HRS</div><div class="l">RESPUESTA INICIAL</div></div>
-          <div class="item"><div class="n">100%</div><div class="l">ACOMPAÑAMIENTO LEGAL</div></div>
-          <div class="item"><div class="n">GDL</div><div class="l">COBERTURA</div></div>
         </div>
       </div>
       <div class="hero-card card">
@@ -198,7 +200,7 @@
           <input required type="email" id="email" placeholder="TU CORREO" />
           <label>TIPO DE GESTIÓN</label>
           <div class="mini" style="margin:6px 0 10px">
-            <span>VENTA</span><span>TRASPASO</span><span>REGULARIZACIÓN</span><span>RECUPERACIÓN</span>
+            <span>VENTA</span><span>TRASPASO</span><span>RECUPERACIÓN</span>
           </div>
           <label>MENSAJE</label>
           <textarea id="mensaje" placeholder="CUÉNTANOS EL CASO: INFONAVIT, ESTATUS, UBICACIÓN"></textarea>
@@ -223,16 +225,11 @@
           <p>GESTIONAMOS TRASPASOS FORMALES PARA EVITAR RIESGOS. DOCUMENTACIÓN EN REGLA Y PROTECCIÓN PARA AMBAS PARTES.</p>
           <div class="mini"><span>CONTRATOS</span><span>NOTARÍA</span><span>GARANTÍAS</span></div>
         </div>
-        <div class="c">
-          <h3>REGULARIZACIÓN Y RECUPERACIÓN</h3>
-          <p>CASAS ABANDONADAS O VANDALIZADAS: TE DAMOS RUTAS LEGALES Y OPERATIVAS PARA RECUPERAR VALOR Y ORDEN.</p>
-          <div class="mini"><span>ESTRATEGIA</span><span>GESTORÍA</span><span>EJECUCIÓN</span></div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROPIEDADES -->
+  <!-- PROPIEDADES (BUSCADOR + LISTA) -->
   <section id="propiedades">
     <div class="container">
       <h2 class="section-title">PROPIEDADES DESTACADAS</h2>
@@ -263,42 +260,9 @@
       <h2 class="section-title">CÓMO TRABAJAMOS</h2>
       <div class="steps">
         <div class="step"><h4>1) DIAGNÓSTICO</h4><p>REVISAMOS ESTATUS INFONAVIT, PAPELES Y RIESGOS.</p></div>
-        <div class="step"><h4>2) ESTRATEGIA</h4><p>DEFINIMOS SI CONVIENE VENDER, TRASPASAR O REGULARIZAR.</p></div>
+        <div class="step"><h4>2) ESTRATEGIA</h4><p>DEFINIMOS SI CONVIENE VENDER O TRASPASAR.</p></div>
         <div class="step"><h4>3) DOCUMENTACIÓN</h4><p>PREPARAMOS CONTRATOS, NOTARÍA Y GESTORÍAS.</p></div>
         <div class="step"><h4>4) CIERRE</h4><p>ACOMPAÑAMIENTO HASTA ENTREGA Y PAGO.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOSOTROS -->
-  <section id="nosotros">
-    <div class="container">
-      <h2 class="section-title">NOSOTROS</h2>
-      <div class="cards">
-        <div class="c">
-          <h3>NUESTRA MISIÓN</h3>
-          <p>RECUPERAR, REGULARIZAR Y DAR MOVILIDAD A VIVIENDAS DE INTERÉS SOCIAL EN EL AMG CON TRANSPARENCIA Y VELOCIDAD.</p>
-        </div>
-        <div class="c">
-          <h3>NUESTRA EXPERIENCIA</h3>
-          <p>+9 AÑOS EN OPERACIONES INFONAVIT, CESIONES, TRASPASOS Y GESTORÍA NOTARIAL. EQUIPO MULTIDISCIPLINARIO.</p>
-        </div>
-        <div class="c">
-          <h3>POR QUÉ TERRATY</h3>
-          <p>PROCESOS CLAROS, CONTRATOS SÓLIDOS Y ACOMPAÑAMIENTO HASTA LA ENTREGA. OPCIONES REALES SI TU CASA ESTÁ ABANDONADA.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog">
-    <div class="container">
-      <h2 class="section-title">BLOG</h2>
-      <div class="quotes" id="blogPosts">
-        <div class="quote"><strong>¿CÓMO FUNCIONA UN TRASPASO INFONAVIT?</strong><small>GUÍA PRÁCTICA EN 5 PASOS</small></div>
-        <div class="quote"><strong>REGULARIZAR UNA VIVIENDA VANDALIZADA</strong><small>RUTAS LEGALES Y COSTOS ESTIMADOS</small></div>
-        <div class="quote"><strong>VENTA VS TRASPASO</strong><small>QUÉ CONVIENE SEGÚN TU CASO</small></div>
       </div>
     </div>
   </section>
@@ -310,7 +274,7 @@
       <div class="quotes">
         <div class="quote">“TRASPASAMOS NUESTRA CASA SIN PROBLEMAS Y CON TODO EN REGLA.”<small>ANA • GUADALAJARA</small></div>
         <div class="quote">“ME ACOMPAÑARON EN TODO EL TRÁMITE INFONAVIT. TRANQUILIDAD TOTAL.”<small>CARLOS • ZAPOPAN</small></div>
-        <div class="quote">“REGULARIZARON UNA PROPIEDAD VANDALIZADA Y LA PUDIMOS VENDER.”<small>MARÍA • TLAJOMULCO</small></div>
+        <div class="quote">“TENÍAMOS UNA PROPIEDAD VANDALIZADA Y LOGRAMOS VENDERLA BIEN.”<small>MARÍA • TLAJOMULCO</small></div>
       </div>
     </div>
   </section>
@@ -330,7 +294,7 @@
         </details>
         <details>
           <summary>¿QUÉ PASA SI LA VIVIENDA ESTÁ VANDALIZADA?</summary>
-          <p>PRIMERO DIAGNOSTICAMOS EL ESTADO Y EL RIESGO. LUEGO DEFINIMOS SI CONVIENE RECUPERAR, VENDER O TRASPASAR. TE DAMOS NÚMEROS REALES.</p>
+          <p>PRIMERO DIAGNOSTICAMOS EL ESTADO Y EL RIESGO. LUEGO DEFINIMOS SI CONVIENE VENDER O TRASPASAR. TE DAMOS NÚMEROS REALES.</p>
         </details>
       </div>
     </div>
@@ -391,22 +355,7 @@
     </div>
   </footer>
 
-  <!-- AVISO DE PRIVACIDAD Y TÉRMINOS (SECCIONES SIMPLES) -->
-  <section id="legal" style="padding-top:0">
-    <div class="container">
-      <details class="card" open>
-        <summary style="font-weight:800">AVISO DE PRIVACIDAD (RESUMEN)</summary>
-        <p class="muted">USAREMOS TUS DATOS PARA CONTACTARTE Y BRINDARTE ASESORÍA INMOBILIARIA. PUEDES EJERCER ARCO ESCRIBIENDO A PRIVACIDAD@TERRATY.MX. NO COMPARTIMOS DATOS SIN CONSENTIMIENTO SALVO OBLIGACIÓN LEGAL.</p>
-      </details>
-      <div style="height:10px"></div>
-      <details class="card">
-        <summary style="font-weight:800">TÉRMINOS Y CONDICIONES (RESUMEN)</summary>
-        <p class="muted">LA INFORMACIÓN MOSTRADA ES REFERENCIAL Y SUJETA A VALIDACIÓN DOCUMENTAL Y DISPONIBILIDAD. SERVICIOS REGIDOS POR CONTRATO ESPECÍFICO.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- WHATSAPP FLOATING BUTTON (REEMPLAZA EL NÚMERO) -->
+  <!-- WHATSAPP FLOATING BUTTON -->
   <a class="wa" id="waBtn" href="https://wa.me/523300000000?text=HOLA%20TERRATY%2C%20QUIERO%20ASESOR%C3%8DA%20SOBRE%20MI%20CASA%20INFONAVIT" target="_blank" rel="noopener">WHATSAPP</a>
 
   <script>
@@ -443,7 +392,6 @@
       const numero = '523300000000'; // REEMPLAZA AQUÍ CON TU LÍNEA OFICIAL
       const url = `https://wa.me/${numero}?text=${texto}`;
 
-      // Aquí podrías agregar un fetch() para enviar el lead a tu backend o Google Sheets
       // ENVÍO OPCIONAL A GOOGLE SHEETS/WEBHOOK (REEMPLAZA LA URL SI LO USAS)
       try{
         const payload = {name, phone, email, msg, ts: new Date().toISOString()};
@@ -511,5 +459,6 @@
   </script>
 </body>
 </html>
+
 
 
