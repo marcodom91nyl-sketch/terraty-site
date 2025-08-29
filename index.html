@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons (si ya los subiste)
+  <!-- Favicons (déjalos si ya los subiste)
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
@@ -155,26 +155,28 @@
           <a class="cta-btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20tengo%20dudas%20por%20WhatsApp" target="_blank" rel="noopener">WHATSAPP</a>
         </div>
       </div>
+
+      <!-- FORM HERO -->
       <div class="card">
         <h3 style="margin:0 0 10px;font-weight:900">SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h3>
-        <form id="contact-form" onsubmit="sendToWhatsApp(); return false;">
+        <form onsubmit="return sendFromForm(this);">
           <div class="row">
             <div>
-              <label for="name">NOMBRE</label>
-              <input id="name" type="text" placeholder="Tu nombre" required>
+              <label for="name_h">NOMBRE</label>
+              <input id="name_h" name="name" type="text" placeholder="Tu nombre" required>
             </div>
             <div>
-              <label for="phone">TELÉFONO</label>
-              <input id="phone" type="tel" placeholder="10 dígitos" required>
+              <label for="phone_h">TELÉFONO</label>
+              <input id="phone_h" name="phone" type="tel" placeholder="10 dígitos" required>
             </div>
           </div>
           <div style="margin-top:10px">
-            <label for="email">EMAIL</label>
-            <input id="email" type="email" placeholder="tu@correo.com" required>
+            <label for="email_h">EMAIL</label>
+            <input id="email_h" name="email" type="email" placeholder="tu@correo.com" required>
           </div>
           <div style="margin-top:10px">
-            <label for="message">MENSAJE</label>
-            <textarea id="message" placeholder="Cuéntanos tu caso" required></textarea>
+            <label for="message_h">MENSAJE</label>
+            <textarea id="message_h" name="message" placeholder="Cuéntanos tu caso" required></textarea>
           </div>
           <div class="send">
             <button type="submit" class="cta-btn">ENVIAR</button>
@@ -248,15 +250,15 @@
       <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
       <details>
         <summary>¿PUEDO TRASPASAR UNA VIVIENDA INFONAVIT?</summary>
-        <p class="muted">Sí, se puede a través de esquemas formales que protegen a ambas partes.</p>
+        <p class="muted">Sí, mediante cesión de derechos formal que protege a ambas partes.</p>
       </details>
       <details>
         <summary>¿CUÁNTO TARDA EL PROCESO?</summary>
-        <p class="muted">Depende del caso y documentos; hacemos un diagnóstico para darte fecha estimada.</p>
+        <p class="muted">Según documentos y estatus: comúnmente entre 30 y 60 días.</p>
       </details>
       <details>
         <summary>¿QUÉ DOCUMENTOS NECESITO?</summary>
-        <p class="muted">Identificaciones, escrituras/contratos, estado del crédito; te guiamos paso a paso.</p>
+        <p class="muted">Identificación, estado de cuenta INFONAVIT, contrato/escrituras y comprobante de domicilio.</p>
       </details>
     </div>
   </section>
@@ -266,24 +268,24 @@
     <div class="container">
       <h2 class="section-title">CONTACTO</h2>
       <div class="contact-card">
-        <form id="contact-form-2" onsubmit="sendToWhatsApp(); return false;">
+        <form onsubmit="return sendFromForm(this);">
           <div class="row">
             <div>
-              <label for="name2">NOMBRE</label>
-              <input id="name2" type="text" placeholder="Tu nombre" required>
+              <label for="name_c">NOMBRE</label>
+              <input id="name_c" name="name" type="text" placeholder="Tu nombre" required>
             </div>
             <div>
-              <label for="phone2">TELÉFONO</label>
-              <input id="phone2" type="tel" placeholder="10 dígitos" required>
+              <label for="phone_c">TELÉFONO</label>
+              <input id="phone_c" name="phone" type="tel" placeholder="10 dígitos" required>
             </div>
           </div>
           <div style="margin-top:10px">
-            <label for="email2">EMAIL</label>
-            <input id="email2" type="email" placeholder="tu@correo.com" required>
+            <label for="email_c">EMAIL</label>
+            <input id="email_c" name="email" type="email" placeholder="tu@correo.com" required>
           </div>
           <div style="margin-top:10px">
-            <label for="message2">MENSAJE</label>
-            <textarea id="message2" placeholder="Cuéntanos tu caso" required></textarea>
+            <label for="message_c">MENSAJE</label>
+            <textarea id="message_c" name="message" placeholder="Cuéntanos tu caso" required></textarea>
           </div>
           <div class="send">
             <button type="submit" class="cta-btn">ENVIAR</button>
@@ -312,34 +314,21 @@
   </a>
 
   <script>
-    // Envía datos del formulario (de héroe o contacto) a WhatsApp con mensaje prellenado
-    function sendToWhatsApp(){
-      // Intenta leer del primer formulario (héroe)
-      const name1 = document.getElementById('name');
-      const phone1 = document.getElementById('phone');
-      const email1 = document.getElementById('email');
-      const msg1 = document.getElementById('message');
-
-      // Intenta leer del segundo formulario (contacto)
-      const name2 = document.getElementById('name2');
-      const phone2 = document.getElementById('phone2');
-      const email2 = document.getElementById('email2');
-      const msg2 = document.getElementById('message2');
-
-      // Elige el que tenga valores (según desde dónde enviaron)
-      const name = name1 && name1.value ? name1.value.trim() : (name2 ? name2.value.trim() : '');
-      const phone = phone1 && phone1.value ? phone1.value.trim() : (phone2 ? phone2.value.trim() : '');
-      const email = email1 && email1.value ? email1.value.trim() : (email2 ? email2.value.trim() : '');
-      const msg = msg1 && msg1.value ? msg1.value.trim() : (msg2 ? msg2.value.trim() : '');
+    // Enviar datos del formulario a WhatsApp con mensaje prellenado
+    function sendFromForm(form){
+      const name = (form.querySelector('[name="name"]')?.value || '').trim();
+      const phone = (form.querySelector('[name="phone"]')?.value || '').trim();
+      const email = (form.querySelector('[name="email"]')?.value || '').trim();
+      const msg = (form.querySelector('[name="message"]')?.value || '').trim();
 
       const texto = `Hola Terraty, soy ${name}. Mi teléfono es ${phone}, mi correo es ${email}. Mensaje: ${msg}`;
       const url = "https://wa.me/523328289896?text=" + encodeURIComponent(texto);
 
       window.open(url, "_blank");
+      return false;
     }
   </script>
 </body>
 </html>
-
 
 
