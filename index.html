@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons (opcional si ya los subiste)
+  <!-- Favicons (si ya los subiste)
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
@@ -20,14 +20,15 @@
 
   <style>
     :root{
-      --brand-primary:#c89a3c;
-      --brand-secondary:#1a1a1a;
-      --bg:#ffffff;
-      --card:#f5f5f7;
-      --text:#1a1a1a;
-      --muted:#666;
+      --brand-primary:#c89a3c;  /* dorado */
+      --brand-secondary:#1a1a1a;/* negro */
+      --bg:#ffffff;             /* fondo claro */
+      --card:#f5f5f7;           /* tarjetas */
+      --text:#1a1a1a;           /* texto principal */
+      --muted:#666;             /* texto secundario */
+      --line:rgba(0,0,0,.06);   /* líneas suaves */
       --shadow:0 6px 18px rgba(0,0,0,.08);
-      --radius:12px;
+      --radius:14px;
       --maxw:1200px;
     }
     *{box-sizing:border-box}
@@ -39,7 +40,7 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
     .brand img{height:240px;width:auto;object-fit:contain} /* LOGO GRANDE */
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:10px 14px;border-radius:999px;transition:.2s;color:var(--brand-secondary);font-weight:600}
@@ -48,12 +49,39 @@
     .cta-btn:hover{opacity:.9}
 
     /* Hero */
-    .hero{padding:40px 0}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero{padding:38px 0 28px;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,154,60,.12);color:#7b621e;border:1px solid rgba(200,154,60,.35);padding:6px 10px;border-radius:999px;font-size:.82rem;margin-bottom:12px;font-weight:800}
+    h1{font-size:clamp(28px,4vw,44px);margin:6px 0 10px;font-weight:900}
+    .muted{color:var(--muted)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+
+    /* Secciones comunes */
+    section{padding:50px 0;border-bottom:1px solid var(--line)}
+    .section-title{font-size:clamp(22px,3vw,34px);margin:0 0 20px;font-weight:900}
+
+    /* Tarjetas */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+
+    /* Propiedades */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .listing{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .listing .img{aspect-ratio:16/10;background:linear-gradient(135deg, rgba(200,154,60,.25), rgba(0,0,0,.10))}
+    .listing .body{padding:14px}
+    .tag{display:inline-block;font-size:10px;background:rgba(200,154,60,.12);color:#7b621e;border:1px solid rgba(200,154,60,.35);padding:6px 10px;border-radius:999px;margin-bottom:8px}
+    .price{font-weight:900}
+
+    /* Proceso (pasos) */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:left}
+
+    /* FAQ */
+    details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:10px}
+    summary{cursor:pointer;font-weight:800}
 
     /* Contacto */
-    #contacto{padding:30px 0}
-    .contact-card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    #contacto .contact-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     label{display:block;font-size:.85rem;color:var(--muted);margin:2px 0 6px}
     input,textarea{
@@ -62,6 +90,11 @@
     }
     textarea{min-height:140px;resize:vertical}
     .send{margin-top:12px}
+
+    /* Footer */
+    footer{padding:26px 0;background:#fafafa;color:#222}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .foot small{color:var(--muted)}
 
     /* Botón flotante */
     .wa{
@@ -72,14 +105,23 @@
     .wa svg{width:20px;height:20px;fill:#fff}
     .wa:hover{opacity:.9}
 
+    /* Responsive */
     @media (max-width:980px){
       nav ul{display:none}
       .brand img{height:160px}
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .listings{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
       .row{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .steps{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <div class="brand">
@@ -92,7 +134,6 @@
           <li><a href="#propiedades">PROPIEDADES</a></li>
           <li><a href="#proceso">PROCESO</a></li>
           <li><a href="#nosotros">NOSOTROS</a></li>
-          <li><a href="#blog">BLOG</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contacto">CONTACTO</a></li>
         </ul>
@@ -102,42 +143,167 @@
     </div>
   </header>
 
-  <main id="inicio" class="hero container">
-    <div class="actions">
-      <a class="cta-btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20una%20valuaci%C3%B3n" target="_blank" rel="noopener">QUIERO UNA VALUACIÓN</a>
-      <a class="cta-btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20tengo%20dudas%20por%20WhatsApp" target="_blank" rel="noopener">WHATSAPP</a>
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">ESPECIALISTAS EN INFONAVIT • TRASPASOS</span>
+        <h1>VENDE O TRASPASA TU VIVIENDA INFONAVIT EN GUADALAJARA</h1>
+        <p class="muted">GESTIONAMOS TODO EL PROCESO NOTARIAL, LEGAL Y ADMINISTRATIVO PARA QUE CIERRES SIN ESTRÉS.</p>
+        <div class="actions">
+          <a class="cta-btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20una%20valuaci%C3%B3n" target="_blank" rel="noopener">QUIERO UNA VALUACIÓN</a>
+          <a class="cta-btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20tengo%20dudas%20por%20WhatsApp" target="_blank" rel="noopener">WHATSAPP</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 10px;font-weight:900">SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h3>
+        <form id="contact-form" onsubmit="sendToWhatsApp(); return false;">
+          <div class="row">
+            <div>
+              <label for="name">NOMBRE</label>
+              <input id="name" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label for="phone">TELÉFONO</label>
+              <input id="phone" type="tel" placeholder="10 dígitos" required>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label for="email">EMAIL</label>
+            <input id="email" type="email" placeholder="tu@correo.com" required>
+          </div>
+          <div style="margin-top:10px">
+            <label for="message">MENSAJE</label>
+            <textarea id="message" placeholder="Cuéntanos tu caso" required></textarea>
+          </div>
+          <div class="send">
+            <button type="submit" class="cta-btn">ENVIAR</button>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="container">
-    <h2 style="font-size:40px;margin:0 0 14px">CONTACTO</h2>
-    <div class="contact-card">
-      <form id="contact-form" onsubmit="sendToWhatsApp(); return false;">
-        <div class="row">
-          <div>
-            <label for="name">NOMBRE</label>
-            <input id="name" type="text" placeholder="Tu nombre" required>
-          </div>
-          <div>
-            <label for="phone">TELÉFONO</label>
-            <input id="phone" type="tel" placeholder="10 dígitos" required>
-          </div>
-        </div>
-        <div style="margin-top:10px">
-          <label for="email">EMAIL</label>
-          <input id="email" type="email" placeholder="tu@correo.com" required>
-        </div>
-        <div style="margin-top:10px">
-          <label for="message">MENSAJE</label>
-          <textarea id="message" placeholder="Cuéntanos tu caso" required></textarea>
-        </div>
-        <div class="send">
-          <button type="submit" class="cta-btn">ENVIAR</button>
-        </div>
-      </form>
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <h2 class="section-title">SERVICIOS PRINCIPALES</h2>
+      <div class="cards">
+        <div class="card"><strong>COMPRA/VENTA INFONAVIT</strong><p class="muted">Cierre seguro con respaldo notarial y jurídico.</p></div>
+        <div class="card"><strong>TRASPASOS FORMALES</strong><p class="muted">Cesión de derechos con protección para ambas partes.</p></div>
+        <div class="card"><strong>RECUPERACIÓN</strong><p class="muted">Casas abandonadas o vandalizadas: diagnóstico y ruta.</p></div>
+      </div>
     </div>
   </section>
+
+  <!-- PROPIEDADES -->
+  <section id="propiedades">
+    <div class="container">
+      <h2 class="section-title">PROPIEDADES DESTACADAS</h2>
+      <div class="listings">
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body"><span class="tag">GUADALAJARA • INFONAVIT</span><h3 style="margin:6px 0">CASA 2 REC • 1 BAÑO</h3><div class="price">$850,000 MXN</div></div>
+        </article>
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body"><span class="tag">TLAJOMULCO • INFONAVIT</span><h3 style="margin:6px 0">CASA 3 REC • 1.5 BAÑOS</h3><div class="price">$1,150,000 MXN</div></div>
+        </article>
+        <article class="listing">
+          <div class="img"></div>
+          <div class="body"><span class="tag">ZAPOPAN</span><h3 style="margin:6px 0">DEPTO 2 REC • 1 BAÑO</h3><div class="price">$980,000 MXN</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <div class="container">
+      <h2 class="section-title">CÓMO TRABAJAMOS</h2>
+      <div class="steps">
+        <div class="step"><strong>1) DIAGNÓSTICO</strong><p class="muted">Estatus INFONAVIT y riesgos del caso.</p></div>
+        <div class="step"><strong>2) ESTRATEGIA</strong><p class="muted">Definimos venta o traspaso según tu objetivo.</p></div>
+        <div class="step"><strong>3) DOCUMENTACIÓN</strong><p class="muted">Contratos, notaría y gestión administrativa.</p></div>
+        <div class="step"><strong>4) CIERRE</strong><p class="muted">Entrega y pago seguro, sin estrés.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <div class="container">
+      <h2 class="section-title">NOSOTROS</h2>
+      <div class="cards">
+        <div class="card"><strong>EXPERIENCIA</strong><p class="muted">Equipo especializado en INFONAVIT y cesión de derechos.</p></div>
+        <div class="card"><strong>TRANSPARENCIA</strong><p class="muted">Acompañamiento claro de principio a fin.</p></div>
+        <div class="card"><strong>RAPIDEZ</strong><p class="muted">Procesos optimizados para cerrar más rápido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+      <details>
+        <summary>¿PUEDO TRASPASAR UNA VIVIENDA INFONAVIT?</summary>
+        <p class="muted">Sí, se puede a través de esquemas formales que protegen a ambas partes.</p>
+      </details>
+      <details>
+        <summary>¿CUÁNTO TARDA EL PROCESO?</summary>
+        <p class="muted">Depende del caso y documentos; hacemos un diagnóstico para darte fecha estimada.</p>
+      </details>
+      <details>
+        <summary>¿QUÉ DOCUMENTOS NECESITO?</summary>
+        <p class="muted">Identificaciones, escrituras/contratos, estado del crédito; te guiamos paso a paso.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <h2 class="section-title">CONTACTO</h2>
+      <div class="contact-card">
+        <form id="contact-form-2" onsubmit="sendToWhatsApp(); return false;">
+          <div class="row">
+            <div>
+              <label for="name2">NOMBRE</label>
+              <input id="name2" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label for="phone2">TELÉFONO</label>
+              <input id="phone2" type="tel" placeholder="10 dígitos" required>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label for="email2">EMAIL</label>
+            <input id="email2" type="email" placeholder="tu@correo.com" required>
+          </div>
+          <div style="margin-top:10px">
+            <label for="message2">MENSAJE</label>
+            <textarea id="message2" placeholder="Cuéntanos tu caso" required></textarea>
+          </div>
+          <div class="send">
+            <button type="submit" class="cta-btn">ENVIAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <div style="font-weight:900;margin-bottom:6px">TERRATY INMOBILIARIA</div>
+        <small>© 2025 TERRATY. TODOS LOS DERECHOS RESERVADOS.</small>
+      </div>
+      <div><small class="muted">Guadalajara, Jalisco</small></div>
+      <div><small><a href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">WHATSAPP</a></small></div>
+    </div>
+  </footer>
 
   <!-- Botón flotante con ícono -->
   <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20vengo%20desde%20el%20sitio%20web" target="_blank" rel="noopener">
@@ -146,12 +312,25 @@
   </a>
 
   <script>
-    // Envía los datos del formulario a WhatsApp con mensaje prellenado
+    // Envía datos del formulario (de héroe o contacto) a WhatsApp con mensaje prellenado
     function sendToWhatsApp(){
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
+      // Intenta leer del primer formulario (héroe)
+      const name1 = document.getElementById('name');
+      const phone1 = document.getElementById('phone');
+      const email1 = document.getElementById('email');
+      const msg1 = document.getElementById('message');
+
+      // Intenta leer del segundo formulario (contacto)
+      const name2 = document.getElementById('name2');
+      const phone2 = document.getElementById('phone2');
+      const email2 = document.getElementById('email2');
+      const msg2 = document.getElementById('message2');
+
+      // Elige el que tenga valores (según desde dónde enviaron)
+      const name = name1 && name1.value ? name1.value.trim() : (name2 ? name2.value.trim() : '');
+      const phone = phone1 && phone1.value ? phone1.value.trim() : (phone2 ? phone2.value.trim() : '');
+      const email = email1 && email1.value ? email1.value.trim() : (email2 ? email2.value.trim() : '');
+      const msg = msg1 && msg1.value ? msg1.value.trim() : (msg2 ? msg2.value.trim() : '');
 
       const texto = `Hola Terraty, soy ${name}. Mi teléfono es ${phone}, mi correo es ${email}. Mensaje: ${msg}`;
       const url = "https://wa.me/523328289896?text=" + encodeURIComponent(texto);
@@ -161,5 +340,6 @@
   </script>
 </body>
 </html>
+
 
 
