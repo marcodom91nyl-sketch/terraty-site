@@ -5,74 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Terraty Inmobiliaria | Compra, Traspasa o Vende tu Casa en la ZMG con INFONAVIT</title>
   <meta name="description" content="Terraty Inmobiliaria en la ZMG: compra, traspaso o venta de tu casa con INFONAVIT. Te guiamos en todo el proceso notarial, legal y administrativo para que cierres sin estrés." />
+
+  <!-- Tipografía, íconos y favicon -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- favicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="terraty_logo_web.png" type="image/png" />
+
   <style>
     :root{
-      --brand-primary:#c89a3c;
-      --brand-secondary:#1a1a1a;
-      --brand-accent:#ffffff;
+      --gold:#c89a3c;
+      --ink:#1a1a1a;
       --bg:#ffffff;
-      --card:#f9f9f9;
-      --text:#1a1a1a;
-      --muted:#666666;
-      --shadow:0 6px 18px rgba(0,0,0,.1);
-      --radius:12px;
+      --soft:#f6f7f8;
+      --muted:#666;
+      --line:#e9e9e9;
+      --shadow:0 6px 18px rgba(0,0,0,.08);
+      --radius:14px;
       --maxw:1200px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,sans-serif;}
-    body{line-height:1.6;text-transform:uppercase;}
-    a{text-decoration:none;color:inherit}
+    html,body{margin:0;padding:0}
+    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;text-transform:uppercase}
+    a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+    .container{max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
 
-    header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    /* Header / Nav */
+    header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
     .brand img{width:240px;height:auto;object-fit:contain}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
-    nav a{padding:10px 14px;border-radius:999px;transition:.2s;color:var(--brand-secondary);font-weight:600}
-    nav a:hover{background:rgba(0,0,0,.04)}
-    .cta-btn{display:inline-block;background:var(--brand-primary);color:white;padding:10px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);letter-spacing:.6px;font-size:14px;white-space:nowrap}
-    .cta-btn:hover{opacity:.9}
+    nav a{padding:10px 14px;border-radius:999px;transition:.2s;color:var(--ink);font-weight:700}
+    nav a:hover{background:rgba(0,0,0,.06)}
+    .nav-cta{background:var(--gold);color:#fff;box-shadow:var(--shadow);padding:10px 18px;border-radius:999px;letter-spacing:.3px;white-space:nowrap}
+    .nav-cta:hover{filter:brightness(.95)}
+    @media (max-width:880px){
+      .brand img{width:180px}
+      nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+      .nav-cta{padding:12px 20px;font-weight:900}
+    }
 
-    .hero{text-align:center;padding:60px 20px}
-    .hero h1{font-size:clamp(28px,4vw,40px);margin-bottom:12px;font-weight:900}
-    .hero p{color:var(--muted);font-size:18px;margin-bottom:20px}
+    /* Hero */
+    .hero{padding:56px 0 24px;text-align:center}
+    .hero h1{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 12px;font-weight:900}
+    .hero p{max-width:900px;margin:0 auto 24px;color:#555;font-weight:600}
 
-    form{display:flex;flex-direction:column;gap:12px;max-width:500px;margin:20px auto}
-    input,textarea{padding:12px;border:1px solid #ccc;border-radius:8px;font-family:inherit;font-size:1rem;text-transform:none}
-    textarea{min-height:100px;resize:vertical}
-    .form-btn{background:var(--brand-primary);color:#fff;font-weight:800;padding:14px;border-radius:999px;text-align:center;box-shadow:var(--shadow)}
-    .form-btn:hover{opacity:.9}
+    /* Lead / Form */
+    .lead{padding:12px 0 44px}
+    .panel{max-width:950px;margin:0 auto;background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+    .panel h3{text-align:center;margin:0 0 16px;font-size:22px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .grid input,.grid textarea{padding:14px;border:1px solid #e5e7eb;border-radius:10px;font-family:inherit;text-transform:none}
+    .grid textarea{grid-column:1/-1;height:110px;resize:vertical}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;font-weight:900;border:none;border-radius:999px;padding:16px 22px;box-shadow:var(--shadow);letter-spacing:.3px}
+    .btn:hover{filter:brightness(.95)}
+    .btn-block{width:100%}
+    .btn-big{font-size:18px;padding:20px 28px}
 
-    footer{background:#f9f9f9;padding:40px 20px;text-align:center;margin-top:60px}
-    footer .social{margin:20px 0;display:flex;justify-content:center;gap:20px}
-    footer .social a{font-size:24px;color:var(--brand-secondary);transition:.3s}
-    footer .social a:hover{color:var(--brand-primary)}
-    .copy{margin-top:10px;color:#555;font-size:14px}
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{font-size:26px;font-weight:900;text-align:center;margin:0 0 18px}
+    .muted{text-align:center;color:var(--muted);max-width:900px;margin:0 auto 28px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .card h4{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:#555;text-transform:none}
 
-    .wa{position:fixed;right:18px;bottom:18px;background:var(--brand-primary);border-radius:999px;padding:14px 18px;color:#fff;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;font-weight:800}
-    .wa:hover{opacity:.9}
+    /* Proceso */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);text-align:center}
+    .step .num{width:42px;height:42px;border-radius:50%;background:var(--gold);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:10px}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow)}
+    details summary{cursor:pointer;font-weight:800}
+    details p{text-transform:none;margin:12px 0 0;color:#444}
+
+    /* Footer */
+    footer{background:#fafafa;padding:30px 0;margin-top:52px;border-top:1px solid var(--line)}
+    .social{display:flex;gap:20px;justify-content:center;font-size:26px}
+    .social a{transition:.2s}
+    .social a:hover{opacity:.85}
+    .copy{margin-top:14px;text-align:center;color:#666;font-size:14px}
+
+    /* WhatsApp flotante */
+    .wa{position:fixed;right:18px;bottom:18px;background:var(--gold);color:#fff;padding:14px 18px;border-radius:999px;display:flex;align-items:center;gap:10px;font-weight:900;box-shadow:var(--shadow);z-index:60}
+    .wa:hover{filter:brightness(.95)}
+
+    /* Responsive: columnas a 1 */
+    @media (max-width:960px){
+      .cards,.steps{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
   </style>
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/4e5d7a1a9f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <!-- NAV -->
   <header>
-    <div class="container nav" id="navbar">
+    <div class="container nav">
       <div class="brand">
-        <img src="terraty_logo_web.png" alt="Terraty Inmobiliaria" />
+        <img src="terraty_logo_web.png" alt="Terraty Inmobiliaria">
       </div>
       <nav>
         <ul>
           <li><a href="#inicio">INICIO</a></li>
           <li><a href="#servicios">SERVICIOS</a></li>
-          <li><a href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20comprar%20mi%20casa" target="_blank" class="cta-btn">QUIERO COMPRAR MI CASA</a></li>
+          <li><a class="nav-cta" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20comprar%20mi%20casa" target="_blank" rel="noopener">QUIERO COMPRAR MI CASA</a></li>
           <li><a href="#proceso">PROCESO</a></li>
           <li><a href="#nosotros">NOSOTROS</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -83,50 +124,133 @@
   </header>
 
   <!-- HERO -->
-  <main id="inicio" class="hero container">
+  <section id="inicio" class="hero container">
     <h1>COMPRA, TRASPASA O VENDE TU CASA EN LA ZMG</h1>
     <p>GESTIONAMOS TODO EL PROCESO NOTARIAL, LEGAL Y ADMINISTRATIVO PARA QUE CIERRES SIN ESTRÉS.</p>
-  </main>
+  </section>
 
-  <!-- FORMULARIO -->
-  <section id="contacto" class="contact container" style="text-align:center;padding:40px 20px">
-    <h2>SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h2>
-    <div class="form" style="max-width:600px;margin:20px auto">
-      <form onsubmit="sendWhatsApp();return false">
-        <input id="name" type="text" placeholder="NOMBRE COMPLETO" />
-        <input id="phone" type="tel" placeholder="TELÉFONO" />
-        <input id="email" type="email" placeholder="EMAIL" />
-        <textarea id="message" placeholder="CUÉNTANOS EL CASO"></textarea>
-        <button type="submit" class="form-btn">ENVIAR POR WHATSAPP</button>
+  <!-- FORMULARIO A WHATSAPP -->
+  <section id="contacto" class="lead container">
+    <div class="panel">
+      <h3>SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h3>
+      <form id="wappForm" onsubmit="sendWhatsApp();return false;">
+        <div class="grid">
+          <input id="f_nombre"  type="text"   placeholder="NOMBRE COMPLETO">
+          <input id="f_tel"     type="tel"    placeholder="TELÉFONO">
+          <input id="f_email"   type="email"  placeholder="EMAIL">
+          <textarea id="f_msg"  placeholder="CUÉNTANOS EL CASO"></textarea>
+        </div>
+        <button class="btn btn-block" type="submit">ENVIAR POR WHATSAPP</button>
       </form>
     </div>
   </section>
 
+  <!-- SERVICIOS -->
+  <section id="servicios" class="container">
+    <h2 class="section-title">SERVICIOS PRINCIPALES</h2>
+    <p class="muted">Especialistas en INFONAVIT • TRASPASOS • COMPRA/VENTA</p>
+    <div class="cards">
+      <div class="card">
+        <h4>COMPRA / VENTA DE VIVIENDAS</h4>
+        <p>Asesoría integral para comprar o vender con seguridad jurídica y cierre notarial.</p>
+      </div>
+      <div class="card">
+        <h4>TRASPASOS Y CESIONES</h4>
+        <p>Gestionamos traspasos INFONAVIT de forma legal, rápida y ordenada.</p>
+      </div>
+      <div class="card">
+        <h4>ASESORÍA LEGAL Y NOTARIAL</h4>
+        <p>Revisión de estatus y soluciones reales incluso si la casa está abandonada o vandalizada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIERO COMPRAR (sección visible con CTA) -->
+  <section id="comprar" class="container" style="text-align:center">
+    <h2 class="section-title">¿BUSCAS CASA?</h2>
+    <p class="muted">Te ayudamos a encontrar la mejor opción con tu crédito INFONAVIT.</p>
+    <a class="btn btn-big" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20comprar%20mi%20casa%20y%20necesito%20asesor%C3%ADa" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> QUIERO COMPRAR MI CASA
+    </a>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="container">
+    <h2 class="section-title">NUESTRO PROCESO</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>DIAGNÓSTICO</h4>
+        <p>Nos compartes el caso por WhatsApp: INFONAVIT, estatus y ubicación.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>PLAN CLARO</h4>
+        <p>Te damos opciones reales y el plan notarial/legal para cerrar sin estrés.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>CIERRE</h4>
+        <p>Acompañamos todo el proceso hasta escriturar con notario público.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="container">
+    <h2 class="section-title">NOSOTROS</h2>
+    <p class="muted">Terraty Inmobiliaria es un equipo especializado en INFONAVIT y operaciones con alta exigencia legal. Transparencia, velocidad y seguridad en cada cierre.</p>
+    <div style="text-align:center;margin-top:16px">
+      <a class="btn" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20conocer%20su%20proceso" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> HABLAR POR WHATSAPP</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container">
+    <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+    <details>
+      <summary>¿SE PUEDE TRASPASAR UNA CASA INFONAVIT?</summary>
+      <p>SÍ SE PUEDE, SOLO CON PROFESIONALES Y A TRAVÉS DE UN NOTARIO PÚBLICO. NOSOTROS SOMOS EXPERTOS Y TE GUIAMOS EN TODO EL PROCESO.</p>
+    </details>
+    <details>
+      <summary>¿CUÁNTO TIEMPO TARDA UN TRASPASO?</summary>
+      <p>DEPENDE DEL ESTATUS Y DOCUMENTOS. GENERALMENTE ENTRE 2 A 6 SEMANAS CON NUESTRO ACOMPAÑAMIENTO.</p>
+    </details>
+    <details>
+      <summary>¿ATIENDEN CASAS ABANDONADAS O VANDALIZADAS?</summary>
+      <p>SÍ. EVALUAMOS EL CASO Y PROPONEMOS OPCIONES REALES PARA RECUPERAR O VENDER CON SEGURIDAD.</p>
+    </details>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <p>SÍGUENOS EN REDES SOCIALES</p>
-    <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=61561515111960" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/terraty_inmobiliaria?igsh=MXQzNzdsbDRwZThycw==" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="container">
+      <p class="section-title" style="font-size:18px;margin-bottom:10px">SÍGUENOS EN REDES SOCIALES</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61561515111960" target="_blank" rel="noopener" aria-label="Facebook Terraty" style="color:#3b5998"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/terraty_inmobiliaria?igsh=MXQzNzdsbDRwZThycw==" target="_blank" rel="noopener" aria-label="Instagram Terraty" style="color:#E1306C"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="copy">© 2025 TERRATY INMOBILIARIA</div>
     </div>
-    <p class="copy">© 2025 TERRATY INMOBILIARIA</p>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20vengo%20desde%20el%20sitio%20web" target="_blank" rel="noopener">
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20vengo%20del%20sitio%20web%20y%20quiero%20asesor%C3%ADa" target="_blank" rel="noopener">
     <i class="fab fa-whatsapp"></i> WHATSAPP
   </a>
 
   <script>
+    // Enviar formulario a WhatsApp con prellenados
     function sendWhatsApp(){
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+      const nombre = document.getElementById('f_nombre').value.trim();
+      const tel    = document.getElementById('f_tel').value.trim();
+      const mail   = document.getElementById('f_email').value.trim();
+      const msg    = document.getElementById('f_msg').value.trim();
 
-      const text = `Hola Terraty, soy ${name}, mi teléfono es ${phone}, mi correo es ${email}. Te comparto mi caso: ${message}`;
-      const url = "https://wa.me/523328289896?text=" + encodeURIComponent(text);
-      window.open(url, "_blank");
+      const texto = `Hola Terraty, soy ${nombre || '—'} (+52 ${tel || '—'}). ` +
+                    `Mi correo: ${mail || '—'}. Caso: ${msg || '—'}.`;
+      const url = `https://wa.me/523328289896?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
