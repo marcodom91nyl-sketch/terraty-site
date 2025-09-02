@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- favicon -->
   <link rel="icon" href="terraty_logo_web.png" type="image/png" />
   <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,47 +15,57 @@
     :root{
       --brand-primary:#c89a3c;
       --brand-secondary:#1a1a1a;
-      --brand-accent:#ffffff;
       --bg:#ffffff;
       --card:#f9f9f9;
       --text:#1a1a1a;
-      --muted:#666666;
+      --muted:#666;
       --shadow:0 6px 18px rgba(0,0,0,.1);
-      --radius:12px;
       --maxw:1200px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
-    body{line-height:1.6;text-transform:uppercase;}
-    a{color:inherit;text-decoration:none}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:Montserrat,sans-serif;line-height:1.6;text-transform:uppercase;}
+    a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+    .container{max-width:var(--maxw);margin:auto;padding:0 20px}
 
+    /* NAV */
     header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:120px;height:auto;object-fit:contain}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{padding:10px 14px;border-radius:999px;transition:all .2s ease;color:var(--brand-secondary)}
+    .brand img{width:120px;height:auto}
+    nav ul{display:flex;gap:18px;list-style:none}
+    nav a{padding:10px 14px;border-radius:999px;transition:.2s}
     nav a:hover{background:rgba(0,0,0,.04)}
 
-    .wa{position:fixed;right:18px;bottom:18px;background:var(--brand-primary);border-radius:999px;padding:14px 18px;color:#fff;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;font-weight:800}
+    /* HERO */
+    .hero{text-align:center;padding:60px 20px}
+    .hero h1{font-size:32px;font-weight:900;margin-bottom:10px}
+    .hero p{color:var(--muted);font-weight:500;margin-bottom:25px}
+
+    /* FORM */
+    .contact{padding:50px 20px}
+    .contact h2{text-align:center;font-size:22px;margin-bottom:20px}
+    .form{max-width:600px;margin:auto}
+    .form input,.form textarea{width:100%;padding:12px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;font-family:inherit}
+    .form a{display:block;text-align:center;background:var(--brand-primary);color:#fff;padding:14px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+
+    /* WHATSAPP FLOAT */
+    .wa{position:fixed;right:18px;bottom:18px;background:var(--brand-primary);border-radius:999px;padding:14px 18px;color:#fff;box-shadow:var(--shadow);display:flex;align-items:center;font-weight:800;gap:10px}
     .wa:hover{opacity:.9}
 
-    /* Footer */
-    footer{background:#f9f9f9;padding:30px 20px;text-align:center;margin-top:40px;}
-    footer p{margin:0 0 10px;font-weight:600;color:var(--brand-secondary);}
-    .social{display:flex;gap:25px;justify-content:center;font-size:28px;}
-    .social a{transition:opacity .2s ease;}
-    .social a:hover{opacity:.7;}
+    /* FOOTER */
+    footer{background:#f9f9f9;padding:30px 20px;text-align:center;margin-top:40px}
+    footer p{margin-bottom:10px;font-weight:600}
+    .social{display:flex;gap:25px;justify-content:center;font-size:28px}
+    .social a{transition:.2s}
+    .social a:hover{opacity:.7}
+    .copy{margin-top:15px;font-size:14px;color:#666}
   </style>
 </head>
 <body>
+  <!-- NAV -->
   <header>
-    <div class="container nav" id="navbar">
-      <div class="brand">
-        <img src="terraty_logo_web.png" alt="Terraty Inmobiliaria" />
-      </div>
+    <div class="container nav">
+      <div class="brand"><img src="terraty_logo_web.png" alt="Terraty Inmobiliaria"></div>
       <nav>
         <ul>
           <li><a href="#inicio">INICIO</a></li>
@@ -71,45 +80,46 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <main id="inicio" class="hero container">
     <h1>VENDE O TRASPASA TU VIVIENDA INFONAVIT EN LA ZMG</h1>
     <p>GESTIONAMOS TODO EL PROCESO NOTARIAL, LEGAL Y ADMINISTRATIVO PARA QUE CIERRES SIN ESTRÉS.</p>
-    <div class="actions">
-      <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20más%20información" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> WHATSAPP
-      </a>
-    </div>
   </main>
 
-  <!-- Formulario contacto -->
+  <!-- FORM -->
   <section id="contacto" class="contact container">
-    <h2>Solicita tu diagnóstico en 3 pasos</h2>
+    <h2>SOLICITA TU DIAGNÓSTICO EN 3 PASOS</h2>
     <div class="form">
       <form onsubmit="return false">
         <input type="text" placeholder="NOMBRE COMPLETO" />
         <input type="tel" placeholder="TELÉFONO" />
         <input type="email" placeholder="EMAIL" />
         <textarea placeholder="CUÉNTANOS EL CASO"></textarea>
-        <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20te%20comparto%20mi%20caso" target="_blank" rel="noopener">ENVIAR POR WHATSAPP</a>
+        <a href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20te%20comparto%20mi%20caso" target="_blank" rel="noopener">ENVIAR POR WHATSAPP</a>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>Síguenos en redes sociales</p>
+    <p>SÍGUENOS EN REDES SOCIALES</p>
     <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=61561515111960" target="_blank" style="color:#3b5998;">
+      <a href="https://www.facebook.com/profile.php?id=61561515111960" target="_blank" style="color:#3b5998">
         <i class="fab fa-facebook"></i>
       </a>
-      <a href="https://www.instagram.com/terraty_inmobiliaria?igsh=MXQzNzdsbDRwZThycw==" target="_blank" style="color:#E1306C;">
+      <a href="https://www.instagram.com/terraty_inmobiliaria?igsh=MXQzNzdsbDRwZThycw==" target="_blank" style="color:#E1306C">
         <i class="fab fa-instagram"></i>
       </a>
     </div>
-    <p style="margin-top:15px;font-size:14px;color:#666;">© 2025 Terraty Inmobiliaria</p>
+    <div class="copy">© 2025 TERRATY INMOBILIARIA</div>
   </footer>
+
+  <!-- BOTÓN FLOAT -->
+  <a class="wa" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20más%20información" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> WHATSAPP
+  </a>
 </body>
 </html>
+
 
 
