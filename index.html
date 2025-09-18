@@ -35,6 +35,7 @@
       --shadow:0 10px 24px rgba(0,0,0,.08);
       --radius:14px;
       --maxw:1200px;
+      --wa:#25D366;           /* verde WhatsApp */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
@@ -47,13 +48,14 @@
     header{position:sticky;top:0;background:var(--light);z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.05)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:240px;height:auto;object-fit:contain} /* Logo grande como acordamos */
+    .brand img{width:240px;height:auto;object-fit:contain}
     .menu{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
     .menu a{font-weight:700;letter-spacing:.4px;color:var(--dark)}
     .menu a:hover{opacity:.75}
 
-    .cta{display:inline-block;background:var(--brand);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);letter-spacing:.4px;white-space:nowrap}
-    .cta:hover{opacity:.92}
+    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);letter-spacing:.4px;white-space:nowrap}
+    .cta svg{width:18px;height:18px;fill:#fff}
+    .cta:hover{opacity:.9}
 
     /* Hero */
     .hero{padding:46px 0 28px}
@@ -66,8 +68,9 @@
     .form-grid .full{grid-column:1 / -1}
     input,textarea{width:100%;padding:14px 16px;border:1px solid #e5e5e5;border-radius:12px;background:#fff;font-weight:600;color:var(--dark)}
     textarea{min-height:120px;resize:vertical}
-    .btn-block{width:100%;padding:16px;border-radius:999px;background:var(--brand);color:#fff;font-weight:900;border:0;cursor:pointer;box-shadow:var(--shadow);letter-spacing:.5px}
-    .btn-block:hover{opacity:.92}
+    .btn-block{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px;border-radius:999px;background:var(--wa);color:#fff;font-weight:900;border:0;cursor:pointer;box-shadow:var(--shadow);letter-spacing:.5px}
+    .btn-block svg{width:20px;height:20px;fill:#fff}
+    .btn-block:hover{opacity:.9}
 
     /* Sections */
     section{padding:44px 0}
@@ -77,7 +80,7 @@
     .box h3{margin:0 0 10px;font-size:18px;font-weight:800}
     .box p{margin:0;color:#444;line-height:1.5}
 
-    /* Benefits 4 cols on desktop */
+    /* Benefits */
     .cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .benefit{background:#fff;border:1px solid #eee;border-radius:14px;padding:16px;box-shadow:var(--shadow)}
 
@@ -92,8 +95,9 @@
     .copy{text-align:center;color:#777;margin-top:12px;font-size:14px;font-weight:700}
 
     /* Floating WhatsApp */
-    .wa-fab{position:fixed;right:18px;bottom:18px;background:var(--brand);color:#fff;border-radius:999px;padding:14px 18px;box-shadow:var(--shadow);font-weight:900;z-index:60}
-    .wa-fab:hover{opacity:.92}
+    .wa-fab{position:fixed;right:18px;bottom:18px;background:var(--wa);color:#fff;border-radius:999px;padding:14px 18px;box-shadow:var(--shadow);font-weight:900;z-index:60;display:inline-flex;align-items:center;gap:8px}
+    .wa-fab svg{width:18px;height:18px;fill:#fff}
+    .wa-fab:hover{opacity:.9}
 
     /* Responsive */
     @media (max-width:900px){
@@ -113,14 +117,15 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Si quieres usar el logo patrio temporal, cambia el src a logo_patrias.png -->
         <img src="terraty_logo_web.png" alt="Terraty Inmobiliaria" />
       </div>
       <nav class="menu">
         <a href="#inicio">INICIO</a>
         <a href="#servicios">SERVICIOS</a>
-        <!-- Botón que reemplaza Propiedades: va a WhatsApp -->
-        <a class="cta" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20comprar%20mi%20casa%20con%20su%20asesor%C3%ADa" target="_blank" rel="noopener">QUIERO COMPRAR MI CASA</a>
+        <a class="cta" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20comprar%20mi%20casa%20con%20su%20asesor%C3%ADa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.37 0 .02 5.35.02 11.95c0 2.11.55 4.17 1.6 5.98L0 24l6.28-1.65a11.94 11.94 0 0 0 5.72 1.45h.01c6.63 0 11.98-5.35 11.98-11.95 0-3.19-1.24-6.19-3.47-8.37zM12 21.54c-1.84 0-3.64-.5-5.2-1.44l-.37-.22-3.73.98 1-3.64-.24-.37a9.58 9.58 0 0 1-1.46-5.09c0-5.32 4.34-9.65 9.66-9.65 2.58 0 5 .99 6.83 2.79a9.59 9.59 0 0 1 2.83 6.86c0 5.32-4.34 9.65-9.65 9.65zm5.28-7.27c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.14-.2.29-.77.94-.94 1.13-.17.19-.35.21-.64.07-.29-.15-1.24-.46-2.36-1.47-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.5.07-.76.36s-1 1-1 2.43 1.02 2.82 1.16 3.01c.15.19 2.01 3.06 4.87 4.29.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.55-.34z"/></svg>
+          QUIERO COMPRAR MI CASA
+        </a>
         <a href="#proceso">PROCESO</a>
         <a href="#nosotros">NOSOTROS</a>
         <a href="#faq">FAQ</a>
@@ -137,163 +142,23 @@
         En Terraty resolvemos tu caso con trato humano. Nos encargamos de trámites ante Infonavit y notaría, cancelación de hipoteca y acompañamiento total. Tú no te preocupes.
       </p>
 
-      <!-- Card con formulario -->
       <div class="card">
         <h2 style="margin-bottom:10px;">Solicita tu diagnóstico en 3 pasos</h2>
         <form id="leadForm" class="form-grid" onsubmit="return sendWhatsApp(event)">
           <input type="text" id="nombre" placeholder="NOMBRE COMPLETO" required />
           <input type="tel" id="telefono" placeholder="TELÉFONO (10 dígitos)" required />
           <input type="email" id="email" class="full" placeholder="EMAIL (opcional)" />
-          <textarea id="mensaje" class="full" placeholder="CUÉNTANOS TU CASO: colonia/ciudad, estatus, si está habitada o no..." required></textarea>
-          <button type="submit" class="btn-block full">ENVIAR POR WHATSAPP</button>
+          <textarea id="mensaje" class="full" placeholder="CUÉNTANOS TU CASO..." required></textarea>
+          <button type="submit" class="btn-block full">
+            <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.37 0 .02 5.35.02 11.95c0 2.11.55 4.17 1.6 5.98L0 24l6.28-1.65a11.94 11.94 0 0 0 5.72 1.45h.01c6.63 0 11.98-5.35 11.98-11.95 0-3.19-1.24-6.19-3.47-8.37zM12 21.54c-1.84 0-3.64-.5-5.2-1.44l-.37-.22-3.73.98 1-3.64-.24-.37a9.58 9.58 0 0 1-1.46-5.09c0-5.32 4.34-9.65 9.66-9.65 2.58 0 5 .99 6.83 2.79a9.59 9.59 0 0 1 2.83 6.86c0 5.32-4.34 9.65-9.65 9.65zm5.28-7.27c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.14-.2.29-.77.94-.94 1.13-.17.19-.35.21-.64.07-.29-.15-1.24-.46-2.36-1.47-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.5.07-.76.36s-1 1-1 2.43 1.02 2.82 1.16 3.01c.15.19 2.01 3.06 4.87 4.29.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.55-.34z"/></svg>
+            ENVIAR POR WHATSAPP
+          </button>
         </form>
       </div>
     </div>
   </main>
 
-  <!-- COMO TE AYUDAMOS -->
-  <section id="servicios">
-    <div class="container">
-      <h2>Nos encargamos de TODO por ti</h2>
-      <div class="cols">
-        <div class="box">
-          <h3>Trámites ante INFONAVIT y notario</h3>
-          <p>Olvídate del papeleo: gestionamos todo el proceso legal y administrativo para cerrar sin estrés.</p>
-        </div>
-        <div class="box">
-          <h3>Cancelación de hipoteca y deudas</h3>
-          <p>Te ayudamos a regularizar el caso, incluso si hay retrasos o adeudos; buscamos la ruta viable.</p>
-        </div>
-        <div class="box">
-          <h3>Acompañamiento total</h3>
-          <p>Te llevamos de la mano hasta firmar y te mantenemos informado en cada paso.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFICIOS -->
-  <section>
-    <div class="container">
-      <h2>¿Por qué hacerlo con Terraty?</h2>
-      <div class="cols-4">
-        <div class="benefit"><strong>No gastas en abogados ni trámites</strong><br/><span style="color:#555">Nuestro equipo lo hace por ti, con transparencia.</span></div>
-        <div class="benefit"><strong>Resoluciones más rápidas</strong><br/><span style="color:#555">Experiencia práctica en casos Infonavit en la ZMG.</span></div>
-        <div class="benefit"><strong>Casas abandonadas o vandalizadas</strong><br/><span style="color:#555">Te damos opciones reales para vender o traspasar.</span></div>
-        <div class="benefit"><strong>Trato humano y directo</strong><br/><span style="color:#555">Sin letras chiquitas. Hablamos claro, te cuidamos.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section id="nosotros">
-    <div class="container">
-      <h2>Historias reales</h2>
-      <div class="cols">
-        <div class="testimonial">
-          <div>“Mi casa en Tonalá estaba abandonada y con deudas. Terraty me ayudó a traspasarla y ahora estoy tranquilo.”</div>
-          <div class="name">Juan, 35 años</div>
-        </div>
-        <div class="testimonial">
-          <div>“Ya no podía pagar. Me explicaron el proceso y en poco tiempo vendimos sin problemas.”</div>
-          <div class="name">María, 41 años</div>
-        </div>
-        <div class="testimonial">
-          <div>“Lo mejor fue que me acompañaron a cada paso y cumplieron lo que prometieron.”</div>
-          <div class="name">Daniel, 33 años</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA INTERMEDIA -->
-  <section id="proceso">
-    <div class="container">
-      <div class="card">
-        <h2>¿Listo para empezar hoy?</h2>
-        <p style="margin:6px 0 16px;color:#444">Escríbenos por WhatsApp y te damos una guía clara de tu mejor opción: vender o traspasar.</p>
-        <a class="cta" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20quiero%20saber%20c%C3%B3mo%20resolver%20mi%20casa%20Infonavit." target="_blank" rel="noopener">HABLAR POR WHATSAPP</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ sencillo -->
-  <section id="faq">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-      <div class="cols">
-        <div class="box">
-          <h3>¿Se puede traspasar una casa Infonavit?</h3>
-          <p>Sí, con profesionales y a través de notario público. Nosotros te guiamos en todo el proceso.</p>
-        </div>
-        <div class="box">
-          <h3>¿Qué pasa si debo mensualidades?</h3>
-          <p>Analizamos tu caso y te proponemos una ruta viable: regularización, venta o traspaso seguro.</p>
-        </div>
-        <div class="box">
-          <h3>¿Atienden toda la ZMG?</h3>
-          <p>Sí. Trabajamos en Guadalajara, Zapopan, Tlaquepaque, Tonalá y Tlajomulco.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO (form duplicado para abajo de la página) -->
-  <section id="contacto">
-    <div class="container">
-      <h2>Queremos escucharte hoy</h2>
-      <div class="card">
-        <form class="form-grid" onsubmit="return sendWhatsApp(event)">
-          <input type="text" id="nombre2" placeholder="NOMBRE COMPLETO" required />
-          <input type="tel" id="telefono2" placeholder="TELÉFONO (10 dígitos)" required />
-          <input type="email" id="email2" class="full" placeholder="EMAIL (opcional)" />
-          <textarea id="mensaje2" class="full" placeholder="CUÉNTANOS TU CASO" required></textarea>
-          <button type="submit" class="btn-block full">ENVIAR POR WHATSAPP</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div style="text-align:center;font-weight:800;">SÍGUENOS EN REDES SOCIALES</div>
-      <div class="social">
-        <a aria-label="Facebook Terraty" href="https://www.facebook.com/profile.php?id=61561515111960" target="_blank" rel="noopener" title="Facebook">
-          <!-- simple F -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.08 5.66 21.21 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.25c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.92h-2.34V22C18.34 21.21 22 17.08 22 12.06Z" fill="#1a1a1a"/></svg>
-        </a>
-        <a aria-label="Instagram Terraty" href="https://www.instagram.com/terraty_inmobiliaria?igsh=MXQzNzdsbDRwZThycw==" target="_blank" rel="noopener" title="Instagram">
-          <!-- simple IG -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11.001 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7.001 3.5 3.5 0 0 0 0-7ZM18 6.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="#1a1a1a"/></svg>
-        </a>
-      </div>
-      <div class="copy">© 2025 TERRATY INMOBILIARIA</div>
-    </div>
-  </footer>
-
   <!-- WhatsApp FAB -->
-  <a class="wa-fab" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20vengo%20desde%20su%20sitio%20web%20y%20necesito%20ayuda%20con%20mi%20casa%20Infonavit." target="_blank" rel="noopener">WHATSAPP</a>
-
-  <script>
-    // Envía el contenido del formulario por WhatsApp con prellenado
-    function buildMessage(nombre, tel, email, msg){
-      const base = `Hola Terraty, mi nombre es ${nombre}. Mi teléfono es ${tel}.${email ? " Email: " + email + "." : ""} Caso: ${msg}`;
-      return encodeURIComponent(base);
-    }
-    function sendWhatsApp(e){
-      e.preventDefault();
-      const isTop = e.target.id === 'leadForm';
-      const n = (document.getElementById(isTop ? 'nombre' : 'nombre2').value || '').trim();
-      const t = (document.getElementById(isTop ? 'telefono' : 'telefono2').value || '').trim();
-      const m = (document.getElementById(isTop ? 'mensaje' : 'mensaje2').value || '').trim();
-      const em = (document.getElementById(isTop ? 'email' : 'email2').value || '').trim();
-      if(!n || !t || !m){ alert('Por favor completa nombre, teléfono y mensaje.'); return false; }
-      const url = "https://wa.me/523328289896?text=" + buildMessage(n,t,em,m);
-      window.open(url, '_blank');
-      return false;
-    }
-  </script>
-</body>
-</html>
+  <a class="wa-fab" href="https://wa.me/523328289896?text=Hola%20Terraty%2C%20vengo%20desde%20su%20sitio%20web%20y%20necesito%20ayuda%20con%20mi%20casa%20Infonavit." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.37 0 .02 5.35.02 11.95c0 2.11.55 4.17 1.6 5.98L0 24l6.28-1.65a11.94 11.94 0 0 0 5.72 1.45h.01c6.63 0 11.98-5.35 11.98-11.95 0-3.19-1.24-6.19-3.47-8.37zM12 21.54c-1.84 0-3.64-.5-5.2-1.44l-.37-.22-3.73.98 1-3.64-.24-.37a9.58 9.58 0 0 1-1.46-5.09c0-5.32 4.34-9.65 9.66-9.65 2.58 0 5 .99 6.83 2.79a9.59 9.59 0 0 1 2.83 6.86c0 5.32-4.34 9.65-9.65 
 
